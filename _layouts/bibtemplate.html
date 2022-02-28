@@ -1,0 +1,24 @@
+---
+---
+
+<div class="bib-entry">
+    <p class="title">{{ entry.title }}</p>
+    <p><em>{{ entry.author | replace_first: 'Jinhan Kim', '<span
+    style="text-decoration: underline;">Jinhan Kim</span>' | replace: ' and',
+    ',' }}</em></p>
+
+    {% if entry.type == "journalreview" or entry.type == "confreview" %}
+        <p><em>Submitted in {{ entry.year }} {% if entry.type == "journalreview" %} as a journal paper {% endif %}</em></p>    
+    {% else %}
+        <p>
+        <em>
+            {% if entry.link %}
+                <a target= "_blank" href="{{ entry.link }}">{{ entry.series }}</a>
+            {% else %}
+                {{ entry.series }}
+            {% endif %}
+            {% if entry.type == "article" %} {{ entry.year }} {% endif %}
+        </em>
+        </p>
+    {% endif %}
+</div>

@@ -3,10 +3,72 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    
+    <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/skeleton.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
   </head>
   <body>
-    {{ content }}
+    <div class="container">
+      <div class="row" id="header">          
+        <img src="{{ "/assets/images/jinhan-kim.svg" | relative_url }}" class="filter-white">               
+      </div>        
+      <div class="row">
+        <div class="one-half column">
+          <img class="u-pull-left" src="{{ "/assets/images/profile.jpg" | relative_url }}" alt="Jinhan Kim" id="profile_img">
+        </div>
+        <div class="one-half column" id="info">
+          <p>Jinhan Kim,</p>
+          <p>Ph.D Student,</p>
+          <p><a target="_blank" href="https://coinse.kaist.ac.kr">COINSE Lab</a>,</p>
+          <p><a target="_blank" href="https://cs.kaist.ac.kr">School of Computing</a>,</p>  
+          <p><a target="_blank" href="https://kaist.ac.kr/en">KAIST</a>,</p>
+          <p>291 Daehak-ro, Yuseong-gu, Daejeon 34141, Republic of Korea</p>
+          <p>email: jinhankim at-symbol kaist.ac.kr</p>
+          <!-- <p>Fifth-year Ph.D student at <a target=\"_blank\" href=\"https://coinse.kaist.ac.kr/\">COINSE lab</a> in KAIST, South Korea.</p> -->
+        </div>          
+      </div>
+      <hr/>
+      <div class="row">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        blandit imperdiet neque, eget lacinia metus dictum ut. Sed ornare
+        vestibulum dui, et vulputate ligula fringilla a. In hendrerit et nisi et
+        pharetra. Pellentesque at dolor vitae est eleifend efficitur ut at
+        magna. Aenean a lectus euismod, euismod ante sollicitudin, posuere quam.
+        Nulla eget nulla et eros convallis tristique non vel augue. Interdum et
+        malesuada fames ac ante ipsum primis in faucibus. Nulla vitae malesuada
+        nulla. Nunc orci nunc, gravida congue metus sit amet, mattis pulvinar
+        nisi. Nullam ut euismod est. Nullam ornare ac lorem ac gravida. Class
+        aptent taciti sociosqu ad litora torquent per conubia nostra, per
+        inceptos himenaeos. Quisque rutrum elit eget nisl consectetur elementum.
+        Nam ipsum purus, fringilla sed enim vehicula, scelerisque porta nulla.
+        Quisque pulvinar felis tellus, mollis mattis lacus tempus id.
+        </p>
+      </div>
+      <hr/>
+      <div class="row bib-body">
+        <h4>Publications</h4>
+        {{ content }}
+      </div>
+
+      <hr/>
+      <div class="row">
+        <h4>Academic Service</h4>
+        <h5>Program Committee</h5>
+        <ul>
+          <li>Mutation 2022</li>
+          <li>ICST 2022 Poster Track</li>
+          <li>ICSME 2021 Artifact Evaluation Track</li>
+          <li>Mutation 2021</li>
+          <li>Mutation 2020</li>
+        </ul>                
+        
+      </div>
+      <div class="row" id="footer"></div>
+  </div>
   </body>
 </html>
