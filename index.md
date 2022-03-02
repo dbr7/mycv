@@ -17,6 +17,12 @@ See the list at [Google Scholar](https://scholar.google.co.kr/citations?user=XL_
 {% bibliography --file my --query @inproceedings %}
 
 
+{% capture numOtherPapers %}
+{% bibliography_count --file my --query @inproceedingsshort + @inproceedingsdomestic + @inproceedingsworkshop %}
+{% endcapture %}
+<h5 class="bibliography" style="counter-reset:bibitem {{numOtherPapers|plus:1}}">Short, Poster, Workshop, Demo, Domestic Papers</h5>
+{% bibliography --file my --query @inproceedingsshort + @inproceedingsdomestic + @inproceedingsworkshop %}
+
 {% capture numReviewPapers %}
 {% bibliography_count --file my --query @confreview + @journalreview %}
 {% endcapture %}

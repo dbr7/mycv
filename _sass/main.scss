@@ -37,9 +37,8 @@ body {
     margin-bottom: 11px;
 }
 
-.bib-entry > p {
-    margin-top: 4px;
-    margin-bottom: 4px;    
+.bib-entry > p {    
+    margin-bottom: 2px;    
 }
 
 
@@ -58,12 +57,6 @@ body {
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    ul > li {
-        margin: 5px 0 5px 0;
-    }
-    ul {
-        padding: 0 20px 0 20px;
-    }
     ol {
         padding: 0 0 0 30px;
         // font-size: 14px;
@@ -73,7 +66,7 @@ body {
         // content: "[" counter(bibitem) "] ";
         content: counter(bibitem) ".";
         position: absolute;
-        left: -30px;
+        left: -20px;
     }
     ol.bibliography > li {
         counter-increment: bibitem -1;
@@ -87,8 +80,25 @@ body {
         font-style: italic;
     }
 
-    // .title {
-    //     font-weight: 500;
-    // }
+    .title {
+        font-weight: 500;
+        color: #663d5e;
+    }
 
+}
+
+.services {
+    ul {
+        padding: 0 0 0 30px;
+    }
+
+    ul > li {                        
+        list-style: disc;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    // ul > li:before {        
+    //     display: inline-block;
+    // }
 }
