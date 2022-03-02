@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem 'jekyll', '3.9.0'
-gem "github-pages", "~> 3.9.0", group: :jekyll_plugins
+gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-scholar', group: :jekyll_plugins
 gem 'kramdown-parser-gfm'
 
