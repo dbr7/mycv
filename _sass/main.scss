@@ -11,7 +11,15 @@ body {
 
 #footer {
     background-color: #3f363e;
-    height: 25px;
+    height: 30px;
+    margin-top: 30px;
+
+    p {
+        color: #9b969a;
+        font-size: 0.8em;
+        float: right;
+        margin: 7px 10px 0 0;
+    }
 }
 
 #profile_img {
