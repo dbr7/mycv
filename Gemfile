@@ -8,8 +8,10 @@ gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-scholar', group: :jekyll_plugins
 gem 'kramdown-parser-gfm'
 
+
 group :jekyll_plugins do
     gem 'jekyll-paginate'
     gem 'jekyll-sitemap'
     gem "jekyll-last-modified-at"
-  end
+    gem 'jekyll-target-blank'    
+end
