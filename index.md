@@ -18,10 +18,10 @@ See the list at [Google Scholar](https://scholar.google.co.kr/citations?user=XL_
 
 
 {% capture numOtherPapers %}
-{% bibliography_count --file my --query @inproceedingsshort + @inproceedingsdomestic + @inproceedingsworkshop %}
+{% bibliography_count --file my --query @inproceedingsshort + @inproceedingsworkshop %}
 {% endcapture %}
-<h5 class="bibliography" style="counter-reset:bibitem {{numOtherPapers|plus:1}}">Short, Poster, Workshop, Demo, Domestic Papers</h5>
-{% bibliography --file my --query @inproceedingsshort + @inproceedingsdomestic + @inproceedingsworkshop %}
+<h5 class="bibliography" style="counter-reset:bibitem {{numOtherPapers|plus:1}}">Short, Poster, Workshop, Demo Papers</h5>
+{% bibliography --file my --query @inproceedingsshort + @inproceedingsworkshop %}
 
 {% capture numReviewPapers %}
 {% bibliography_count --file my --query @confreview + @journalreview %}
