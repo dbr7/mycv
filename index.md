@@ -2,7 +2,7 @@
 layout: default
 ---
 
-See the list at [Google Scholar](https://scholar.google.co.kr/citations?user=XL_ZwBAAAAAJ)
+See the list at [Google Scholar](https://scholar.google.com/citations?user=XL_ZwBAAAAAJ)
 
 {% capture numJournalPapers %}
 {% bibliography_count --file my --query @article %}
