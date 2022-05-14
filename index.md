@@ -11,20 +11,20 @@ See the list at [Google Scholar](https://scholar.google.com/citations?user=XL_Zw
 {% bibliography --file my --query @article %}
 
 {% capture numConfPapers %}
-{% bibliography_count --file my --query @inproceedings %}
+{% bibliography_count --file my --query @inproceedings[keywords ^= conference] %}
 {% endcapture %}
 <h5 class="bibliography" style="counter-reset:bibitem {{numConfPapers|plus:1}}">Conferences</h5>
-{% bibliography --file my --query @inproceedings %}
+{% bibliography --file my --query @inproceedings[keywords ^= conference] %}
 
 
 {% capture numOtherPapers %}
-{% bibliography_count --file my --query @inproceedingsshort + @inproceedingsworkshop %}
+{% bibliography_count --file my --query @inproceedings[keywords ^= workshop || keywords ^= domestic || keywords ^= demo] %}
 {% endcapture %}
 <h5 class="bibliography" style="counter-reset:bibitem {{numOtherPapers|plus:1}}">Short, Poster, Workshop, Demo Papers</h5>
-{% bibliography --file my --query @inproceedingsshort + @inproceedingsworkshop %}
+{% bibliography --file my --query @inproceedings[keywords ^= workshop || keywords ^= domestic || keywords ^= demo] %}
 
-{% capture numReviewPapers %}
-{% bibliography_count --file my --query @confreview + @journalreview %}
+{% capture numUnpublishedPapers %}
+{% bibliography_count --file my --query @unpublished %}
 {% endcapture %}
-<h5 class="bibliography" style="counter-reset:bibitem {{numReviewPapers|plus:1}}">In Submission</h5>
-{% bibliography --file my --query @confreview + @journalreview %}
+<h5 class="bibliography" style="counter-reset:bibitem {{numUnpublishedPapers|plus:1}}">In Submission</h5>
+{% bibliography --file my --query @unpublished %}
