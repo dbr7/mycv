@@ -19,6 +19,9 @@
             {{ entry.series }}
         {% endif %}
         {% if entry.type == "article" %} {{ entry.year }} {% endif %}
+        {% if links.pdf %}        
+        <a class="ref-button" href="{{ links.pdf }}" target="_blank">PDF</a>
+        {% endif %}
     </em>
     </p>
     {% endif %}

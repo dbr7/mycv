@@ -12,5 +12,6 @@ scholar:
   bibliography_template: bibtemplate
   sort_by: year,month
   order: descending  
+  repository: ./assets/files/papers
   bibtex_options: 
     parse_names : false
