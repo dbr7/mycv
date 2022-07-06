@@ -1,10 +1,12 @@
+$main-color: #663d5e;
+
 body {
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 }
 
 
 #header {
-    background-color: #663d5e;
+    background-color: $main-color;
     height: 35px;
 }
 
@@ -37,7 +39,7 @@ body {
 }
 
 #author-name {    
-    color: #663d5e;
+    color: $main-color;
     display: inline-block;    
 }
 
@@ -94,7 +96,7 @@ body {
 
     .title {
         font-weight: 500;
-        color: #663d5e;
+        color: $main-color;
     }
 
     .body {
