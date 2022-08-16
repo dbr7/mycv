@@ -133,3 +133,13 @@ body {
     //     display: inline-block;
     // }
 }
+
+.news-wrapper {
+    ul {
+        list-style-type: disc;
+    }
+
+    .date {
+        color: $main-color;
+    }
+}
