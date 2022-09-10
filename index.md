@@ -13,7 +13,7 @@ See the list at [Google Scholar](https://scholar.google.com/citations?user=XL_Zw
 {% capture numConfPapers %}
 {% bibliography_count --file my --query @inproceedings[keywords ^= conference] %}
 {% endcapture %}
-<h5 class="bibliography" style="counter-reset:bibitem {{numConfPapers|plus:1}}">Conferences</h5>
+<h5 class="bibliography" style="counter-reset:bibitem {{numConfPapers|plus:1}}">Conferences (Full Papers)</h5>
 {% bibliography --file my --query @inproceedings[keywords ^= conference] %}
 
 
