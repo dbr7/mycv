@@ -135,11 +135,22 @@ body {
 }
 
 .news-wrapper {
-    ul {
-        list-style-type: disc;
+    // ul {
+    //     list-style-type: disc;
+    // }
+    .grid:before {
+        content: '';
+        margin-top: 8px;
+        width: 3px;
+        height: 3px;
+        background-color: #000;
+        border-radius: 50%;
     }
-
+    .grid {
+        display: grid;
+        grid-template-columns: 15px 75px 1fr;
+    }
     .date {
-        // color: $main-color;
+        // width: 100px;
     }
 }
