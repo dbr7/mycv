@@ -138,6 +138,9 @@ body {
     // ul {
     //     list-style-type: disc;
     // }
+    .grid:nth-of-type(odd) {
+        background-color:#f6f6f6;
+    }
     .grid:before {
         content: '';
         margin-top: 9px;
@@ -149,7 +152,7 @@ body {
     .grid {
         display: grid;
         grid-template-columns: 15px 75px 1fr;
-        margin-bottom: 9px;
+        padding: 5px 5px 5px 0;
     }
     .date {
         // width: 100px;
