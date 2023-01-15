@@ -26,5 +26,22 @@ See the list at [Google Scholar](https://scholar.google.com/citations?user=XL_Zw
 {% capture numUnpublishedPapers %}
 {% bibliography_count --file my --query @unpublished %}
 {% endcapture %}
+
+<h5 class="bibliography" style="counter-reset:bibitem 2">Thesis</h5>
+<ol class="bibliography">
+    <li>
+        <div class="bib-entry">
+            <p class="title">Exploiting Mutant’s Relationship with Code, Faults, and Patches for Higher Efficacy of Mutation Analysis</p>
+            <p class="body"><em style="font-weight: 500;">Jinhan Kim</em></p>
+            <p class="body">
+                <em>
+                    Ph.D. Thesis, KAIST, February 2023
+                    <!-- <a class="ref-button" href="" target="_blank">PDF</a> -->
+                </em>
+            </p>
+        </div>
+    </li>
+</ol>
+
 <h5 class="bibliography" style="counter-reset:bibitem {{numUnpublishedPapers|plus:1}}">In Submission</h5>
 {% bibliography --file my --query @unpublished %}

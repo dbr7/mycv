@@ -20,7 +20,8 @@
         {% endif %}
         {% if entry.type == "article" %} {{ entry.year }} {% endif %}
         {% if links.pdf %}        
-        <a class="ref-button" href="{{ links.pdf }}" target="_blank">PDF</a>
+        <!-- <a class="ref-button" href="{{ links.pdf }}" target="_blank">PDF</a> -->
+        <a class="divider">|</a> <a href="{{ links.pdf }}" target="_blank">pdf</a>
         {% endif %}
     </em>
     </p> 
