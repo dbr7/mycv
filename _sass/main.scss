@@ -8,6 +8,10 @@ body {
     font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 }
 
+a:hover {    
+    background: #efe5bb;
+    color: #4d2e47;
+}
 
 #header {
     background-color: $main-color;
