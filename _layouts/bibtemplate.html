@@ -23,6 +23,8 @@
         <!-- <a class="ref-button" href="{{ links.pdf }}" target="_blank">PDF</a> -->
         <a class="divider">|</a> <a href="{{ links.pdf }}" target="_blank">pdf</a>
         {% endif %}
+
+        {% if entry.memo %} <a class="divider">|</a> <span class="memo">{{ entry.memo }}</span> {% endif %}
     </em>
     </p> 
     {% endif %}
