@@ -10,7 +10,7 @@ sass:
 scholar:
   style: apa
   bibliography_template: bibtemplate
-  sort_by: year,month
+  sort_by: year,month,day
   order: descending  
   repository: ./assets/files/papers
   bibtex_options: 

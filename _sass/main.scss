@@ -84,7 +84,7 @@ a:hover {
         // content: "[" counter(bibitem) "] ";
         content: counter(bibitem) ".";
         position: absolute;
-        left: -20px;
+        left: -23px;
     }
     ol.bibliography > li {
         counter-increment: bibitem -1;
