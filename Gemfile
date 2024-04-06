@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
+gem 'bundler', '2.1.4'
 gem 'jekyll', '3.9.0'
 gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-scholar', group: :jekyll_plugins
