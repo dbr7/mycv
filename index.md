@@ -32,7 +32,7 @@ See the list at [Google Scholar](https://scholar.google.com/citations?user=XL_Zw
     <li>
         <div class="bib-entry">
             <p class="title">Exploiting Mutant’s Relationship with Code, Faults, and Patches for Higher Efficacy of Mutation Analysis</p>
-            <p class="body"><em style="font-weight: 500;">Jinhan Kim</em></p>
+            <p class="body"><em style="font-weight: 600;">Jinhan Kim</em></p>
             <p class="body">
                 <em>
                     Ph.D. Thesis, KAIST, February 2023

@@ -5,7 +5,7 @@
     <p class="title">{{ entry.title }}</p>
 
     <p class="body"><em>{{ entry.author | replace_first: 'Jinhan Kim', '<span
-    style="font-weight: 500;">Jinhan Kim</span>' | replace: ' and',
+    style="font-weight: 600;">Jinhan Kim</span>' | replace: ' and',
     ',' }}</em></p>
     {% if entry.type == "unpublished" %}
         <p><em>Submitted in {{ entry.year }} {% if entry.keywords == "journal"
