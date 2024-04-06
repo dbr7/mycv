@@ -1,144 +1,263 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <meta name="description" content="Jinhan Kim personal website" />
-    <meta name="keywords" content="jinhan, jinhankim, jinhan kim, usi, usi lugano, kaist, software, software engineering, computer, research" />
+    <meta
+      name="keywords"
+      content="jinhan, jinhankim, jinhan kim, usi, usi lugano, kaist, software, software engineering, computer, research"
+    />
     <meta name="author" content="Jinhan Kim" />
 
-    <meta name="description" content="Jinhan Kim">    
+    <meta name="description" content="Jinhan Kim" />
 
-
-    <link rel="shortcut icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
-    <link rel="icon" href="{{ "/assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="{{ '/assets/favicon/favicon.ico' | relative_url }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{{ '/assets/favicon/favicon.ico' | relative_url }}"
+      type="image/x-icon"
+    />
 
     <title>{{ site.title }}</title>
-    
+
     <!-- <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> -->
+
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/normalize.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/skeleton.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/4f8566dd60.js"
+      crossorigin="anonymous"
+    ></script>
     
-    <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/skeleton.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">    
   </head>
   <body>
     <div class="container">
-      <div class="row" id="header">          
-        <img src="{{ "/assets/images/jinhan-kim.svg" | relative_url }}" class="filter-white">               
-      </div>        
+      <div class="row" id="header">
+        <img
+          src="{{ '/assets/images/jinhan-kim.svg' | relative_url }}"
+          class="filter-white"
+        />
+      </div>
       <div class="row">
         <div class="one-half column">
-          <img class="u-pull-left" src="{{ "/assets/images/profile_resized.jpg" | relative_url }}" alt="Jinhan Kim" id="profile_img">
+          <img
+            class="u-pull-left"
+            src="{{ '/assets/images/profile_resized.jpg' | relative_url }}"
+            alt="Jinhan Kim"
+            id="profile_img"
+          />
         </div>
         <div class="one-half column" id="info">
           <p>Jinhan Kim,</p>
           <p>Postdoctoral Researcher,</p>
           <p><a href="https://www.si.usi.ch/">Software Institute</a>,</p>
-          <p><a href="https://www.usi.ch/en">Università della Svizzera italiana</a>,</p>
-          <p>Office D3.18 (Level P3), Sector D, Campus East, Via la Santa 1, 6962 Viganello, Switzerland</p>
+          <p>
+            <a href="https://www.usi.ch/en"
+              >Università della Svizzera italiana</a
+            >,
+          </p>
+          <p>
+            Office D3.18 (Level P3), Sector D, Campus East, Via la Santa 1, 6962
+            Viganello, Switzerland
+          </p>
           <p>Email: <a href="">jinhan.kim [at-symbol] usi.ch</a></p>
-          <p>CV: <a target="_blank" href="{{ "/assets/files/jinhankimcv.pdf" | relative_url }}">pdf</a></p>
-        </div>          
+          <p>
+            CV:
+            <a
+              target="_blank"
+              href="{{ '/assets/files/jinhankimcv.pdf' | relative_url }}"
+              >pdf</a
+            >
+          </p>
+        </div>
       </div>
-      <hr/>
+      <hr />
       <div class="row">
         <p>
-          Jinhan Kim is a postdoc at TAU lab in <a href="https://www.usi.ch/en">Università della Svizzera italiana (USI)</a> led by <a href="https://www.inf.usi.ch/faculty/tonella/#/">Prof. Paolo Tonella</a>. He completed his Ph.D. degree from KAIST under the supervision of <a href="https://coinse.github.io/members/shin.yoo/">Dr. Shin Yoo</a>, where he focused on software engineering research, particularly on mutation testing, fault localization, and deep learning system testing.
+          Jinhan Kim is a postdoc at TAU lab in
+          <a href="https://www.usi.ch/en"
+            >Università della Svizzera italiana (USI)</a
+          >
+          led by
+          <a href="https://www.inf.usi.ch/faculty/tonella/#/"
+            >Prof. Paolo Tonella</a
+          >. He completed his Ph.D. degree from KAIST under the supervision of
+          <a href="https://coinse.github.io/members/shin.yoo/">Dr. Shin Yoo</a>,
+          where he focused on software engineering research, particularly on
+          mutation testing, fault localization, and deep learning system
+          testing.
         </p>
       </div>
-      <hr/>
+      <hr />
 
       <div>
         <h4>News</h4>
         <div class="row news-wrapper">
-
+          <div id="news-list">
             <div class="grid">
-              <div class="date">Apr 2024: </div>
-              <div>I joined the <a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM Board of Distinguished Reviewers</a>.</div>
+              <div class="date">Apr 2024:</div>
+              <div>
+                I joined the
+                <a
+                  href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board"
+                  >TOSEM Board of Distinguished Reviewers</a
+                >.
+              </div>
             </div>
 
             <div class="grid">
-              <div class="date">Sep 2023: </div>
-              <div>I'm thrilled to share that I'm beginning a postdoc at USI Lugano under the guidance of <a href="https://www.inf.usi.ch/faculty/tonella/#/">Prof. Paolo Tonella</a>!</div>
+              <div class="date">Sep 2023:</div>
+              <div>
+                I'm thrilled to share that I'm beginning a postdoc at USI Lugano
+                under the guidance of
+                <a href="https://www.inf.usi.ch/faculty/tonella/#/"
+                  >Prof. Paolo Tonella</a
+                >!
+              </div>
             </div>
 
             <div class="grid">
-              <div class="date">Apr 2023: </div>
-              <div>Our paper wins a best paper award at <a href="https://mutation-workshop.github.io/2023/">Mutation 2023</a>.</div>
+              <div class="date">Apr 2023:</div>
+              <div>
+                Our paper wins a best paper award at
+                <a href="https://mutation-workshop.github.io/2023/"
+                  >Mutation 2023</a
+                >.
+              </div>
             </div>
 
             <div class="grid">
-              <div class="date">Dec 2022: </div>
-              <div>In collaboration with TAU Lab, our paper "Repairing DNN Architecture: Are We There Yet?" has been accepted to
-                publication at <a href="https://conf.researchr.org/home/icst-2023">ICST 2023 (Research Papers Track)</a>.</div>
+              <div class="date">Dec 2022:</div>
+              <div>
+                In collaboration with TAU Lab, our paper "Repairing DNN
+                Architecture: Are We There Yet?" has been accepted to
+                publication at
+                <a href="https://conf.researchr.org/home/icst-2023"
+                  >ICST 2023 (Research Papers Track)</a
+                >.
+              </div>
             </div>
 
             <div class="grid">
-              <div class="date">Dec 2022: </div>
-              <div>I'm delighted to announce that I have successfully defended my Ph.D. thesis!</div>
-            </div>      
+              <div class="date">Dec 2022:</div>
+              <div>
+                I'm delighted to announce that I have successfully defended my
+                Ph.D. thesis!
+              </div>
+            </div>
 
             <div class="grid">
-              <div class="date">Aug 2022: </div>
-              <div>I'll visit <a href="https://www.inf.usi.ch/faculty/tonella"> Prof. Paolo Tonella</a> at Università della Svizzera italiana (USI) for two months.</div>
+              <div class="date">Aug 2022:</div>
+              <div>
+                I'll visit
+                <a href="https://www.inf.usi.ch/faculty/tonella">
+                  Prof. Paolo Tonella</a
+                >
+                at Università della Svizzera italiana (USI) for two months.
+              </div>
             </div>
-                      
+
             <div class="grid">
-              <div class="date">Jul 2022: </div>
+              <div class="date">Jul 2022:</div>
               <div>I successfully completed my dissertation proposal.</div>
-            </div>            
-
+            </div>
+          </div>
+          <div id="load-more">
+            <span id="load-text">Show More</span>
+            <i id="load-icon" class="fas fa-angle-down"></i>
+          </div>
         </div>
       </div>
 
-      <hr/>
+      <hr />
       <div class="row bib-body">
         <h4>Publications</h4>
         {{ content }}
       </div>
 
-      <hr/>
+      <hr />
       <div class="row services">
         <h4>Academic Services</h4>
         <h5>Program Committee</h5>
-        <ul>     
-          <li>Year 2024: <a href="https://conf.researchr.org/home/icse-2024">ICSE (Demonstrations Track)</a>, <a href="https://conf.researchr.org/home/icse-2024/deeptest-2024">DeepTest</a>, <a href="https://mutation-workshop.github.io/2024/">Mutation</a></li>
-          
-          <li>Year 2023: <a href="https://mutation-workshop.github.io/2023/">Mutation</a>, <a href="https://conf.researchr.org/home/ase-2023/">ASE (NIER Track)</a>, <a href="https://conf.researchr.org/home/icsme-2023">ICSME (Artifact Evaluation Track)</a></li>
-          
-          <li>Year 2022: <a href="https://mutation-workshop.github.io/2022/">Mutation</a>, <a href="https://icst2022.vrain.upv.es/">ICST (Poster Track)</a>, <a href="https://cyprusconferences.org/icsme2022/">ICSME (Registered Reports Track)</a>, <a href="https://cyprusconferences.org/icsme2022/">ICSME (Artifact Evaluation Track)</a></li>
-          
-          <li>Year 2021: <a href="https://mutation-workshop.github.io/2021/">Mutation</a>, <a href="https://icsme2021.github.io/index.html">ICSME (Artifact Evaluation Track)</a></li>
-          
-          <li>Year 2020: <a href="https://mutation-workshop.github.io/2020/">Mutation</a></li>
+        <ul>
+          <li>
+            Year 2024:
+            <a href="https://conf.researchr.org/home/icse-2024"
+              >ICSE (Demonstrations Track)</a
+            >,
+            <a href="https://conf.researchr.org/home/icse-2024/deeptest-2024"
+              >DeepTest</a
+            >, <a href="https://mutation-workshop.github.io/2024/">Mutation</a>
+          </li>
 
-        </ul>                
-        <h5>Reviewer</h5>        
-        <ul>     
           <li>
-            Year 2024: TSE, TOSEM, EMSE, JSEP, JSS
+            Year 2023:
+            <a href="https://mutation-workshop.github.io/2023/">Mutation</a>,
+            <a href="https://conf.researchr.org/home/ase-2023/"
+              >ASE (NIER Track)</a
+            >,
+            <a href="https://conf.researchr.org/home/icsme-2023"
+              >ICSME (Artifact Evaluation Track)</a
+            >
           </li>
+
           <li>
-            Year 2023: TSE, TOSEM, EMSE, JSEP
-          </li>     
-          <li>
-            Year 2022: TOSEM, JSEP
+            Year 2022:
+            <a href="https://mutation-workshop.github.io/2022/">Mutation</a>,
+            <a href="https://icst2022.vrain.upv.es/">ICST (Poster Track)</a>,
+            <a href="https://cyprusconferences.org/icsme2022/"
+              >ICSME (Registered Reports Track)</a
+            >,
+            <a href="https://cyprusconferences.org/icsme2022/"
+              >ICSME (Artifact Evaluation Track)</a
+            >
           </li>
+
           <li>
-            Year 2021: TOSEM, STVR
+            Year 2021:
+            <a href="https://mutation-workshop.github.io/2021/">Mutation</a>,
+            <a href="https://icsme2021.github.io/index.html"
+              >ICSME (Artifact Evaluation Track)</a
+            >
           </li>
+
           <li>
-            Year 2020: IST, JSS
+            Year 2020:
+            <a href="https://mutation-workshop.github.io/2020/">Mutation</a>
           </li>
-        </ul>        
-      </div>      
-      
+        </ul>
+        <h5>Reviewer</h5>
+        <ul>
+          <li>Year 2024: TSE, TOSEM, EMSE, JSEP, JSS</li>
+          <li>Year 2023: TSE, TOSEM, EMSE, JSEP</li>
+          <li>Year 2022: TOSEM, JSEP</li>
+          <li>Year 2021: TOSEM, STVR</li>
+          <li>Year 2020: IST, JSS</li>
+        </ul>
+      </div>
+
       <div class="row" id="footer">
         <p>Last update: {{ page.last_modified_at | date: '%B %Y' }}</p>
       </div>
-  </div>
+    </div>
   </body>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </html>

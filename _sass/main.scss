@@ -7,275 +7,280 @@ $main-color: #000;
 // }
 /* open-sans-300 - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: url('/assets/fonts/open-sans-v40-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-300italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 300;
-    src: url('/assets/fonts/open-sans-v40-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-regular - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/assets/fonts/open-sans-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 400;
-    src: url('/assets/fonts/open-sans-v40-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-500 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 500;
-    src: url('/assets/fonts/open-sans-v40-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-500italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 500;
-    src: url('/assets/fonts/open-sans-v40-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-600 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: url('/assets/fonts/open-sans-v40-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-600italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 600;
-    src: url('/assets/fonts/open-sans-v40-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-700 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: url('/assets/fonts/open-sans-v40-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-700italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 700;
-    src: url('/assets/fonts/open-sans-v40-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-800 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 800;
-    src: url('/assets/fonts/open-sans-v40-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-800italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 800;
-    src: url('/assets/fonts/open-sans-v40-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-
-body {
-    // font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-    font-family: "Open Sans", sans-serif;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/open-sans-v40-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-300italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/assets/fonts/open-sans-v40-latin-300italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/open-sans-v40-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/fonts/open-sans-v40-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/open-sans-v40-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-500italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/assets/fonts/open-sans-v40-latin-500italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/open-sans-v40-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-600italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/assets/fonts/open-sans-v40-latin-600italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/open-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-700italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/fonts/open-sans-v40-latin-700italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/fonts/open-sans-v40-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* open-sans-800italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 800;
+  src: url("/assets/fonts/open-sans-v40-latin-800italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-a:hover {    
-    // background: #efe5bb;
-    // color: #4d2e47;
-    color: #000;
+body {
+  // font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+a:hover {
+  // background: #efe5bb;
+  // color: #4d2e47;
+  color: #000;
 }
 
 #header {
-    background-color: $main-color;
-    height: 35px;
+  background-color: $main-color;
+  height: 35px;
 }
 
-
 #footer {
-    // background-color: #3f363e;
-    background-color: #000;
-    height: 30px;
-    margin-top: 30px;
+  // background-color: #3f363e;
+  background-color: #000;
+  height: 30px;
+  margin-top: 30px;
 
-    p {
-        color: #9b969a;
-        font-size: 0.8em;
-        float: right;
-        margin: 7px 10px 0 0;
-    }
+  p {
+    color: #9b969a;
+    font-size: 0.8em;
+    float: right;
+    margin: 7px 10px 0 0;
+  }
 }
 
 #profile_img {
-    width: 160px;
+  width: 160px;
 }
 
 #info > p {
-    margin: 0;
+  margin: 0;
 }
 
 .filter-white {
-    filter: invert(100%) sepia(1%) saturate(3575%) hue-rotate(93deg) brightness(108%) contrast(100%);
-    height: 25px;
-    margin: 5px 0 5px 5px;
+  filter: invert(100%) sepia(1%) saturate(3575%) hue-rotate(93deg)
+    brightness(108%) contrast(100%);
+  height: 25px;
+  margin: 5px 0 5px 5px;
 }
 
-#author-name {    
-    color: $main-color;
-    display: inline-block;    
+#author-name {
+  color: $main-color;
+  display: inline-block;
 }
 
 .bib-entry {
-    margin-bottom: 11px;
+  margin-bottom: 11px;
 }
 
-.bib-entry > p {    
-    margin-bottom: 2px;    
+.bib-entry > p {
+  margin-bottom: 2px;
 }
-
 
 /* .bib-entry > p > em {
     // font-weight: 400;
 } */
 
-.bib-body {        
-    ol {
-        counter-reset: list;
-    }
-    ol > li {
-        list-style-position: none;
-        position: relative;
-        list-style: none;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    ol {
-        padding: 0 0 0 30px;
-        // font-size: 14px;
-    }    
+.bib-body {
+  ol {
+    counter-reset: list;
+  }
+  ol > li {
+    list-style-position: none;
+    position: relative;
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  ol {
+    padding: 0 0 0 30px;
+    // font-size: 14px;
+  }
 
-    ol.bibliography > li:before {
-        // content: "[" counter(bibitem) "] ";
-        content: counter(bibitem) ".";
-        position: absolute;
-        left: -23px;
-    }
-    ol.bibliography > li {
-        counter-increment: bibitem -1;
-    }
+  ol.bibliography > li:before {
+    // content: "[" counter(bibitem) "] ";
+    content: counter(bibitem) ".";
+    position: absolute;
+    left: -23px;
+  }
+  ol.bibliography > li {
+    counter-increment: bibitem -1;
+  }
 
-    blockquote {
-        //border: 1px solid black;
-        border-left: 5px solid #333333;
-        margin: 20px 0 20px 0;
-        padding: 2px 8px 2px 8px;
-        // font-style: normal;
-    }
+  blockquote {
+    //border: 1px solid black;
+    border-left: 5px solid #333333;
+    margin: 20px 0 20px 0;
+    padding: 2px 8px 2px 8px;
+    // font-style: normal;
+  }
 
-    em {
-        font-style: normal;
+  em {
+    font-style: normal;
 
-        .divider {
-            margin-left: 3px;
-            margin-right: 3px;
-        }
-
-        .memo {
-            padding: 0 3px;
-            color: #333;
-            // background: #fbf9f1;
-            background: #f6f6f6;
-        }
+    .divider {
+      margin-left: 3px;
+      margin-right: 3px;
     }
 
-    .title {
-        font-weight: 500;
-        color: $main-color;
+    .memo {
+      padding: 0 3px;
+      color: #333;
+      // background: #fbf9f1;
+      background: #f6f6f6;
     }
+  }
 
-    .body {
-        // font-size: 1em;
-    }
+  .title {
+    font-weight: 500;
+    color: $main-color;
+  }
 
-    .ref-button {
-        display: inline-block;
-        border-radius: 4px;
-        padding: .2rem .4rem;
-        margin-right: .15rem;
-        margin-left: .3rem;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all .5s ease;
-        background-color: #efe5bb;
-        font-size: .7rem;        
-    }
+  .body {
+    // font-size: 1em;
+  }
 
+  .ref-button {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    margin-right: 0.15rem;
+    margin-left: 0.3rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background-color: #efe5bb;
+    font-size: 0.7rem;
+  }
 }
 
 .services {
-    ul {
-        padding: 0 0 0 30px;
-    }
+  ul {
+    padding: 0 0 0 30px;
+  }
 
-    ul > li {                        
-        list-style: disc;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+  ul > li {
+    list-style: disc;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 
-    // ul > li:before {        
-    //     display: inline-block;
-    // }
+  // ul > li:before {
+  //     display: inline-block;
+  // }
 }
 
 .news-wrapper {
-    // ul {
-    //     list-style-type: disc;
-    // }
-    .grid:nth-of-type(odd) {
-        background-color:#f6f6f6;
-    }
-    .grid:before {
-        content: '';
-        margin-top: 9px;
-        width: 4px;
-        height: 4px;
-        background-color: #000;
-        border-radius: 50%;
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: 15px 75px 1fr;
-        padding: 5px 5px 5px 0;
-    }
-    .date {
-        // width: 100px;
-    }
+  // ul {
+  //     list-style-type: disc;
+  // }
+  .grid:nth-child(n + 4) {
+    display: none;
+  }
+
+  .grid:nth-of-type(odd) {
+    background-color: #f6f6f6;
+  }
+  .grid:before {
+    content: "";
+    margin-top: 9px;
+    width: 4px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 15px 75px 1fr;
+    padding: 5px 5px 5px 0;
+  }
+
+  #load-more {
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-top: 10px;
+  }
 }
