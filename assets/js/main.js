@@ -1,4 +1,4 @@
-const topN = 3;
+const topN = 4;
 const loadMoreButton = document.getElementById("load-more");
 const loadMoreText = document.getElementById("load-text");
 const loadMoreIcon = document.getElementById("load-icon");
