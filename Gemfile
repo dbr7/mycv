@@ -14,6 +14,6 @@ gem 'kramdown-parser-gfm'
 group :jekyll_plugins do
     gem 'jekyll-paginate'
     gem 'jekyll-sitemap'
-    gem "jekyll-last-modified-at"
+    # gem "jekyll-last-modified-at"
     gem 'jekyll-target-blank'    
 end
