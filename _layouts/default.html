@@ -104,143 +104,7 @@
       </div>
       <hr />
 
-      <div>
-        <h4>News</h4>
-        <div class="row news-wrapper">
-          <div id="news-list">
-            <div class="grid">
-              <div class="date">May 2025:</div>
-              <div>
-                I am organising SBFT 2026 and DeepTest 2026, both co-located with ICSE 2026.
-              </div>
-            </div>
-            <div class="grid">
-              <div class="date">Apr 2025:</div>
-              <div>
-                The paper "An Empirical Study of Fault Localisation Techniques for Deep Neural Networks" has been accepted for publication in <a href="https://link.springer.com/journal/10664">Empirical Software Engineering</a>.
-              </div>
-            </div>
-            <div class="grid">
-              <div class="date">Mar 2025:</div>
-              <div>
-                The paper "PCLA: A Framework for Testing Autonomous Agents in the CARLA Simulator" has been accepted for <a href="https://conf.researchr.org/home/fse-2025">FSE 2025</a> (Demonstrations Track).
-              </div>
-            </div>
-            <div class="grid">
-              <div class="date">Feb 2025:</div>
-              <div>
-                I joined the program committee of <a href="https://conf.researchr.org/home/ase-2025">ASE 2025</a> (NIER Track, Student Research Competition Track) and <a href="https://demessai.github.io/">DeMeSSAI 2025</a>.
-              </div>
-            </div>
-            <div class="grid">
-              <div class="date">Sep 2024:</div>
-              <div>
-                I joined the program committee of
-                <a href="https://sbft25.github.io/">SBFT 2025</a> and <a href="https://conf.researchr.org/home/icst-2025/mutation-2025">Mutation 2025</a>.
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Aug 2024:</div>
-              <div>
-                I am organising <a href="https://conf.researchr.org/home/icse-2025/deeptest-2025">DeepTest 2025</a>, co-located with ICSE 2025.
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Apr 2024:</div>
-              <div>
-                I joined the program committee of
-                <a href="https://conf.researchr.org/home/ase-2024">ASE 2024</a>
-                (Demonstrations Track, NIER Track).
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Apr 2024:</div>
-              <div>
-                I joined the program committee of
-                <a href="https://conf.researchr.org/home/issta-2025"
-                  >ISSTA 2025</a
-                >
-                (Research Track).
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Apr 2024:</div>
-              <div>
-                I joined the
-                <a
-                  href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board"
-                  >TOSEM Board of Distinguished Reviewers</a
-                >.
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Sep 2023:</div>
-              <div>
-                I'm thrilled to share that I'm beginning a postdoc at USI Lugano
-                under the guidance of
-                <a href="https://www.inf.usi.ch/faculty/tonella/#/"
-                  >Prof. Paolo Tonella</a
-                >!
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Apr 2023:</div>
-              <div>
-                Our paper wins a best paper award at
-                <a href="https://mutation-workshop.github.io/2023/"
-                  >Mutation 2023</a
-                >.
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Dec 2022:</div>
-              <div>
-                In collaboration with TAU Lab, our paper "Repairing DNN
-                Architecture: Are We There Yet?" has been accepted to
-                publication at
-                <a href="https://conf.researchr.org/home/icst-2023"
-                  >ICST 2023 (Research Papers Track)</a
-                >.
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Dec 2022:</div>
-              <div>
-                I'm delighted to announce that I have successfully defended my
-                Ph.D. thesis!
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Aug 2022:</div>
-              <div>
-                I'll visit
-                <a href="https://www.inf.usi.ch/faculty/tonella">
-                  Prof. Paolo Tonella</a
-                >
-                at Università della Svizzera italiana (USI) for two months.
-              </div>
-            </div>
-
-            <div class="grid">
-              <div class="date">Jul 2022:</div>
-              <div>I successfully completed my dissertation proposal.</div>
-            </div>
-          </div>
-          <div id="load-more">
-            <span id="load-text">Show More</span>
-            <i id="load-icon" class="fas fa-angle-down"></i>
-          </div>
-        </div>
-      </div>
+      {% include news.html %}
 
       <hr />
       <div class="row bib-body">
@@ -337,7 +201,7 @@
       </div>
 
       <div class="row" id="footer">
-        <!-- <p>Last update: {{ page.last_modified_at | date: '%B %Y' }}</p> -->
+        <p>Last updated: {{ site.time | date: '%B %Y' }}</p>
       </div>
     </div>
   </body>
