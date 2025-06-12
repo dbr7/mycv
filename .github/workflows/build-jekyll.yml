@@ -11,6 +11,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Install OpenSSL 1.1.1 dependencies
+      - name: Install OpenSSL dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential checkinstall zlib1g-dev
+
+      # Download and compile OpenSSL 1.1.1
+      - name: Install OpenSSL 1.1.1
+        run: |
+          cd /tmp
+          wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz
+          tar xf openssl-1.1.1q.tar.gz
+          cd openssl-1.1.1q
+          ./config --prefix=/opt/openssl-1.1.1q --openssldir=/opt/openssl-1.1.1q shared zlib
+          make
+          sudo make install
+          sudo rm -rf /opt/openssl-1.1.1q/certs
+          sudo ln -s /etc/ssl/certs /opt/openssl-1.1.1q
+
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v4
         with:
@@ -24,6 +43,8 @@ jobs:
       # Use GitHub Deploy Action to build and deploy to Github
       # For latest version: `jeffreytse/jekyll-deploy-action@master`
       - uses: jeffreytse/jekyll-deploy-action@v0.6.0
+        env:
+          RUBY_CONFIGURE_OPTS: "--with-openssl-dir=/opt/openssl-1.1.1q"
         with:
           provider: 'github'         # Default is github
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
