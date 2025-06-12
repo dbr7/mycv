@@ -30,6 +30,11 @@ jobs:
           sudo rm -rf /opt/openssl-1.1.1q/certs
           sudo ln -s /etc/ssl/certs /opt/openssl-1.1.1q
 
+      # Install additional Ruby build dependencies
+      - name: Install Ruby build dependencies
+        run: |
+          sudo apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v4
         with:
@@ -44,7 +49,7 @@ jobs:
       # For latest version: `jeffreytse/jekyll-deploy-action@master`
       - uses: jeffreytse/jekyll-deploy-action@v0.6.0
         env:
-          RUBY_CONFIGURE_OPTS: "--with-openssl-dir=/opt/openssl-1.1.1q"
+          RUBY_CONFIGURE_OPTS: "--with-openssl-dir=/opt/openssl-1.1.1q --enable-shared --with-ext=openssl,psych,+"
         with:
           provider: 'github'         # Default is github
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
