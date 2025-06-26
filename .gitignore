@@ -3,6 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=jekyll
 
 ### Jekyll ###
+Gemfile.lock
 _site/
 .sass-cache/
 .jekyll-cache/
