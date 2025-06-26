@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+# source "https://rubygems.org"
 
 # gem "rails"
 # gem install bundler -v 2.4.22 --no-document
 # gem update --system 3.4.22 --no-document
-# gem 'jekyll', '3.10.0'
+gem 'jekyll', '3.9.5'
 gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-scholar', group: :jekyll_plugins
 gem 'kramdown-parser-gfm'
