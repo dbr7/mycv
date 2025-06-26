@@ -6,7 +6,7 @@
       {% for item in sorted_news %}
       <div class="grid">
         <div class="date">{{ item.date | date: "%b %Y" }}:</div>
-        <div>{{ item.content | markdownify | strip_html }}</div>
+        <div>{{ item.content | markdownify }}</div>
       </div>
       {% endfor %}
     </div>
@@ -17,4 +17,4 @@
   </div>
 </div>
 
-<hr />
+<!-- <hr /> -->

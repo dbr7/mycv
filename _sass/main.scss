@@ -277,7 +277,9 @@ a:hover {
     grid-template-columns: 15px 75px 1fr;
     padding: 5px 5px 5px 0;
   }
-
+  .grid p {
+    margin: 0;
+  }
   #load-more {
     cursor: pointer;
     font-size: 0.8em;
