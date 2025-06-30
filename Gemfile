@@ -7,7 +7,7 @@ source "https://rubygems.org"
 # gem update --system 3.4.22 --no-document
 # gem 'jekyll', '3.9.5'
 gem 'github-pages', group: :jekyll_plugins
-gem 'jekyll-scholar', '~> 5.16', group: :jekyll_plugins
+gem 'jekyll-scholar', group: :jekyll_plugins
 gem 'kramdown-parser-gfm'
 
 
