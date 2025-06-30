@@ -11,12 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      # - name: Install dependencies
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y ruby-dev build-essential zlib1g-dev
-          
-
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v4
         with:
@@ -27,6 +21,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache-
 
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+          
       # Use GitHub Deploy Action to build and deploy to Github
       # For latest version: `jeffreytse/jekyll-deploy-action@master`
       - uses: jeffreytse/jekyll-deploy-action@v0.6.0
@@ -43,4 +42,4 @@ jobs:
           bundler_ver: '2.5.0'            # Default is compatible bundler version (~>2.5.0)
           cname: 'jinhan.me'                  # Default is to not use a cname
           actor: ''                  # Default is the GITHUB_ACTOR
-          pre_build_commands: 'sudo apt-get install -y build-essential'
+          pre_build_commands: ''
