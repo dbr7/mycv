@@ -42,6 +42,3 @@ For an up-to-date list of publications and their citation counts, please see my 
         </div>
     </li>
 </ol>
-
-<!-- <h5 class="bibliography" style="counter-reset:bibitem {{numUnpublishedPapers|plus:1}}">In Submission</h5> -->
-<!-- {% bibliography --file my --query @unpublished %} -->
