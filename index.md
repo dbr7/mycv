@@ -2,7 +2,7 @@
 layout: default
 ---
 
-See the list at [Google Scholar](https://scholar.google.com/citations?user=XL_ZwBAAAAAJ)
+For an up-to-date list of publications and their citation counts, please see my profile on [Google Scholar](https://scholar.google.com/citations?user=XL_ZwBAAAAAJ).
 
 {% capture numJournalPapers %}
 {% bibliography_count --file my --query @article %}
