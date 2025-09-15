@@ -3,30 +3,44 @@
 {% assign series_titles = site.data.venue_mapping %}
 
 <div class="bib-entry">
-    <p class="title">{{ entry.title }}</p>
+    <p class="title"><span style="color: rgb(0,128,128);">[{{ entry.series }}]</span> {{ entry.title }}</p>
 
     <p class="body"><em>{{ entry.author | replace_first: 'Jinhan Kim', '<span
     style="font-weight: 600;">Jinhan Kim</span>' | replace: ' and',
     ',' }}</em></p>
-    {% if entry.type == "unpublished" %}
-        <p><em>Submitted in {{ entry.year }} {% if entry.keywords == "journal"
-        %} as a journal paper {% endif %} {% if entry.memo %} ({{ entry.memo }}) {% endif %}</em></p>    
-    {% else %}
-    <p class="body">
-    <em>
+
+    {% if entry.keywords == "journal" %}
         {% if entry.link %}
-            <a target= "_blank" href="{{ entry.link }}" title="{{ series_titles[entry.series] }}">{{ entry.series }}</a>
+        <p class="body"><em style="font-style: italic;"><a target= "_blank" href="{{ entry.link }}">{{ entry.journal }}</a></em>
         {% else %}
-            {{ entry.series }}
-        {% endif %}
-        {% if entry.type == "article" %} {{ entry.year }} {% endif %}
-        {% if links.pdf %}        
-        <a class="divider">|</a> <a href="{{ links.pdf }}" target="_blank">pdf</a>
+        <p class="body"><em style="font-style: italic;">{{ entry.journal }}</em>
         {% endif %}
 
-        {% if entry.memo %} <a class="divider">|</a> <span class="memo">{{ entry.memo }}</span> {% endif %}
-    </em>
-    </p> 
+        {{ entry.year }}
+
+        {% if links.pdf %}        
+            <a class="divider">|</a> <a href="{{ links.pdf }}" target="_blank">pdf</a>
+        {% endif %}
+        </p>
+
+    {% else %}
+        {% if entry.link %}
+        <p class="body"><em style="font-style: italic;"><a target= "_blank" href="{{ entry.link }}">{{ entry.booktitle }}</a></em>
+        {% else %}
+        <p class="body"><em style="font-style: italic;">{{ entry.booktitle }}</em>
+        {% endif %}
+
+        {{ entry.year }}
+
+        {% if links.pdf %}        
+            <a class="divider">|</a> <a href="{{ links.pdf }}" target="_blank">pdf</a>
+        {% endif %}
+        </p>
+    {% endif %}
+    
+
+    {% if entry.memo %}
+        <p class="body"><em style="color: rgb(0,128,128);">{{ entry.memo }}</em></p> 
     {% endif %}
 
 </div>
