@@ -134,6 +134,8 @@ a:hover {
 
 #profile_img {
   width: 160px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #info > p {
