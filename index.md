@@ -2,7 +2,7 @@
 layout: default
 ---
 
-For an up-to-date list of publications and their citation counts, please see my profile on [Google Scholar](https://scholar.google.com/citations?user=XL_ZwBAAAAAJ). Unless otherwise specified, they have been published at the main research track.
+For an up-to-date list of publications and their citation counts, please see my profile on [Google Scholar](https://scholar.google.com/citations?user=XL_ZwBAAAAAJ).  <br/>Unless otherwise specified, they have been published at the main research track.
 
 {% capture numJournalPapers %}
 {% bibliography_count --file my --query @article %}
