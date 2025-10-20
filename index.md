@@ -32,11 +32,10 @@ For an up-to-date list of publications and their citation counts, please see my 
     <li>
         <div class="bib-entry">
             <p class="title">Exploiting Mutant’s Relationship with Code, Faults, and Patches for Higher Efficacy of Mutation Analysis</p>
-            <p class="body"><em style="font-weight: 600;">Jinhan Kim</em></p>
+            <p class="body"><em style="font-weight: 600;">J. Kim</em></p>
             <p class="body">
                 <em>
                     Ph.D. Thesis, KAIST, February 2023
-                    <!-- <a class="ref-button" href="" target="_blank">PDF</a> -->
                 </em>
             </p>
         </div>
