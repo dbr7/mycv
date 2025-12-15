@@ -3,18 +3,15 @@
 {% assign series_titles = site.data.venue_mapping %}
 
 <div class="bib-entry">
-    <!-- <p class="title"><span style="color: rgb(0,128,128);">[{{ entry.series }}]</span> {{ entry.title }}</p> -->
     <p class="title">[{{ entry.series }}] <span>{{ entry.title }}</span></p>
 
     <p class="body"><em>{% assign authors = entry.author | split: ' and ' %}{% for author in authors %}{% if forloop.first == false %}{% if forloop.last %} and {% else %}, {% endif %}{% endif %}{% assign author_trimmed = author | strip %}{% assign name_parts = author_trimmed | split: ' ' %}{% assign initials = '' %}{% assign last_name = '' %}{% assign parts_count = name_parts | size %}{% if parts_count == 1 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[0] %}{% elsif parts_count == 2 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[1] %}{% elsif parts_count == 3 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '. ' | append: name_parts[1] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[2] %}{% elsif parts_count >= 4 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '. ' | append: name_parts[1] | slice: 0, 1 | append: '. ' | append: name_parts[2] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts | last %}{% endif %}{% if author_trimmed contains 'Jinhan Kim' %}<span style="font-weight: 600;">{{ initials }} {{ last_name }}</span>{% else %}{{ initials }} {{ last_name }}{% endif %}{% endfor %}</em></p>
 
     {% if entry.keywords == "journal" %}
          <p class="body">
-         <!--    <em style="font-style: italic;">{% if entry.link %}<a target="_blank" href="{{ entry.link }}">{{ entry.journal }}</a>{% else %}{{ entry.journal }}{% endif %}</em>, {{ entry.year }} -->
-        <em style="font-style: italic;">{{ entry.journal }}, {{ entry.year }}</em>
+         <em style="font-style: italic;">{{ entry.journal }}, {{ entry.year }}</em>
         {% if links.pdf %}
             <em>
-                <!-- <a href="{{ links.pdf }}" target="_blank" style="text-decoration: none; color: rgb(0,128,128); font-weight: 500;" title="PDF"> -->
                 <a href="{{ links.pdf }}" target="_blank" style="text-decoration: none; font-weight: 500;" title="PDF">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-left: 2px;">
                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
@@ -26,11 +23,9 @@
 
     {% else %}
         <p class="body">
-            <!-- <em style="font-style: italic;">{% if entry.link %}<a target="_blank" href="{{ entry.link }}">{{ entry.booktitle }}</a>{% else %}{{ entry.booktitle }}{% endif %}</em>, {{ entry.year }} -->
             <em style="font-style: italic;">{{ entry.booktitle }}, {{ entry.year }}</em>
         {% if links.pdf %}
             <em>
-                <!-- <a href="{{ links.pdf }}" target="_blank" style="text-decoration: none; color: rgb(0,128,128); font-weight: 500;" title="PDF"> -->
                 <a href="{{ links.pdf }}" target="_blank" style="text-decoration: none; font-weight: 500;" title="PDF">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-left: 2px;">
                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
@@ -42,8 +37,7 @@
     {% endif %}
 
     {% if entry.memo %}
-        <!-- <span style="color: rgb(0,128,128); font-style: italic;">{{ entry.memo }}</span> -->
-        <span style="font-style: italic;">{{ entry.memo }}</span>
+        <span style="font-style: italic; color: #6B7280">{{ entry.memo }}</span>
     {% endif %}
 
 </div>
