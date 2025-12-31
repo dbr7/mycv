@@ -5,11 +5,11 @@
 <div class="bib-entry">
     <p class="title">[{{ entry.series }}] <span>{{ entry.title }}</span></p>
 
-    <p class="body"><em>{% assign authors = entry.author | split: ' and ' %}{% for author in authors %}{% if forloop.first == false %}{% if forloop.last %} and {% else %}, {% endif %}{% endif %}{% assign author_trimmed = author | strip %}{% assign name_parts = author_trimmed | split: ' ' %}{% assign initials = '' %}{% assign last_name = '' %}{% assign parts_count = name_parts | size %}{% if parts_count == 1 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[0] %}{% elsif parts_count == 2 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[1] %}{% elsif parts_count == 3 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '. ' | append: name_parts[1] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[2] %}{% elsif parts_count >= 4 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '. ' | append: name_parts[1] | slice: 0, 1 | append: '. ' | append: name_parts[2] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts | last %}{% endif %}{% if author_trimmed contains 'Jinhan Kim' %}<span style="font-weight: 600;">{{ initials }} {{ last_name }}</span>{% else %}{{ initials }} {{ last_name }}{% endif %}{% endfor %}</em></p>
+    <p class="body"><em style="color: #555;">{% assign authors = entry.author | split: ' and ' %}{% for author in authors %}{% if forloop.first == false %}{% if forloop.last %} and {% else %}, {% endif %}{% endif %}{% assign author_trimmed = author | strip %}{% assign name_parts = author_trimmed | split: ' ' %}{% assign initials = '' %}{% assign last_name = '' %}{% assign parts_count = name_parts | size %}{% if parts_count == 1 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[0] %}{% elsif parts_count == 2 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[1] %}{% elsif parts_count == 3 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '. ' | append: name_parts[1] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts[2] %}{% elsif parts_count >= 4 %}{% assign initials = name_parts[0] | slice: 0, 1 | append: '. ' | append: name_parts[1] | slice: 0, 1 | append: '. ' | append: name_parts[2] | slice: 0, 1 | append: '.' %}{% assign last_name = name_parts | last %}{% endif %}{% if author_trimmed contains 'Jinhan Kim' %}<span style="font-weight: 600;">{{ initials }} {{ last_name }}</span>{% else %}{{ initials }} {{ last_name }}{% endif %}{% endfor %}</em></p>
 
     {% if entry.keywords == "journal" %}
          <p class="body">
-         <em style="font-style: italic;">{{ entry.journal }}, {{ entry.year }}</em>
+         <em style="font-style: italic; color:#666">{{ entry.journal }}, {{ entry.year }}</em>
         {% if links.pdf %}
             <em>
                 <a href="{{ links.pdf }}" target="_blank" style="text-decoration: none; font-weight: 500;" title="PDF">
@@ -23,7 +23,7 @@
 
     {% else %}
         <p class="body">
-            <em style="font-style: italic;">{{ entry.booktitle }}, {{ entry.year }}</em>
+            <em style="font-style: italic; color:#666">{{ entry.booktitle }}, {{ entry.year }}</em>
         {% if links.pdf %}
             <em>
                 <a href="{{ links.pdf }}" target="_blank" style="text-decoration: none; font-weight: 500;" title="PDF">
@@ -37,7 +37,9 @@
     {% endif %}
 
     {% if entry.memo %}
-        <span style="font-style: italic; color: #6B7280">{{ entry.memo }}</span>
+        <!-- <span style="font-style: italic; color: #6B7280">{{ entry.memo }}</span> -->
+         <span style="font-style: italic; color: #64748B">{{ entry.memo }}</span>
+        
     {% endif %}
 
 </div>
