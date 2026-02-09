@@ -11,17 +11,17 @@ For an up-to-date list of publications and their citation counts, please see my 
 {% bibliography --file my --query @article %}
 
 {% capture numConfPapers %}
-{% bibliography_count --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full] %}
+{% bibliography_count --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full || keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
 {% endcapture %}
-<h5 class="bibliography" style="counter-reset:bibitem {{numConfPapers|plus:1}}">Conferences & Workshops (Full Papers)</h5>
-{% bibliography --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full] %}
+<h5 class="bibliography" style="counter-reset:bibitem {{numConfPapers|plus:1}}">Conferences & Workshops</h5>
+{% bibliography --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full || keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
 
 
-{% capture numOtherPapers %}
+<!-- {% capture numOtherPapers %}
 {% bibliography_count --file my --query @inproceedings[keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
 {% endcapture %}
 <h5 class="bibliography" style="counter-reset:bibitem {{numOtherPapers|plus:1}}">Short, Poster, Demo, Domestic Papers</h5>
-{% bibliography --file my --query @inproceedings[keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
+{% bibliography --file my --query @inproceedings[keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %} -->
 
 {% capture numUnpublishedPapers %}
 {% bibliography_count --file my --query @unpublished %}
