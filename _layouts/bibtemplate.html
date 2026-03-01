@@ -36,11 +36,8 @@
         </p>
     {% endif %}
 
-    <!-- {% if entry.memo %} -->
-        <!-- <span style="font-style: italic; color: #6B7280">{{ entry.memo }}</span> -->
-         <!-- <span style="font-style: italic; color: #D97706">{{ entry.memo }}</span> -->
-    <!-- {% endif %} -->
-
-    {% if entry.memo %}<p class="pub-memo"><img src="{{ '/assets/images/star.gif' | relative_url }}" alt="★" style="margin-right: 3px;"><u>{{ entry.memo }}</u></p>{% endif %}
+    {% if entry.memo %}
+        <img src="{{ '/assets/images/star.gif' | relative_url }}" alt="★" style="margin-right: 3px;" /><span><u>{{ entry.memo }}</u></span>
+    {% endif %}
 
 </div>
