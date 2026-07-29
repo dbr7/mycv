@@ -1,20 +1,36 @@
-<div>
-  <h4>News</h4>
-  <div class="row news-wrapper">
-    <div id="news-list">
-      {% assign sorted_news = site.news | sort: 'date' | reverse %}
-      {% for item in sorted_news %}
-      <div class="grid">
-        <div class="date">{{ item.date | date: "%b %Y" }}:</div>
-        <div>{{ item.content | markdownify }}</div>
-      </div>
-      {% endfor %}
-    </div>
-    <div id="load-more">
-      <span id="load-text">Show More</span>
-      <i id="load-icon" class="fas fa-angle-down"></i>
-    </div>
-  </div>
-</div>
+<section
+  class="content-section news-section"
+  id="news"
+  aria-labelledby="news-title"
+>
+  <header class="content-section-header">
+    <p class="section-label"><span aria-hidden="true"></span>Updates</p>
+    <h2 id="news-title">Latest news</h2>
+  </header>
 
-<!-- <hr /> -->
+  <div class="news-list" id="news-list">
+    {% assign sorted_news = site.news | sort: 'date' | reverse %}
+    {% for item in sorted_news %}
+    <article class="news-item">
+      <time datetime="{{ item.date | date: '%Y-%m-%d' }}">
+        <span>{{ item.date | date: "%b" }}</span>
+        {{ item.date | date: "%Y" }}
+      </time>
+      <div>{{ item.content | markdownify }}</div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <button
+    class="news-toggle"
+    id="news-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="news-list"
+  >
+    <span>Show all news</span>
+    <svg aria-hidden="true" viewBox="0 0 20 20">
+      <path d="m5 8 5 5 5-5" />
+    </svg>
+  </button>
+</section>

@@ -1,0 +1,19 @@
+<section
+  class="content-section selected-section"
+  id="selected-work"
+  aria-labelledby="selected-title"
+>
+  <header class="content-section-header section-header-row">
+    <div>
+      <p class="section-label"><span aria-hidden="true"></span>Recent work</p>
+      <h2 id="selected-title">Latest publications</h2>
+    </div>
+    <a class="section-link" href="{{ '/publications/' | relative_url }}"
+      >View all</a
+    >
+  </header>
+
+  <div class="featured-list">
+    {% bibliography --file my --max 3 --template featured_bibtemplate %}
+  </div>
+</section>

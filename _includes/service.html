@@ -1,0 +1,52 @@
+<section
+  class="content-section service-section"
+  id="service"
+  aria-labelledby="service-title"
+>
+  <header class="content-section-header">
+    <p class="section-label">
+      <span aria-hidden="true"></span>Organizing &amp; reviewing
+    </p>
+    <h2 id="service-title">Community service</h2>
+  </header>
+
+  <div class="service-groups">
+    {% for group in site.data.service.groups %}
+    <article class="service-group">
+      <header>
+        <span aria-hidden="true">{{ group.number }}</span>
+        <h3>{{ group.title }}</h3>
+      </header>
+      <ul class="service-list">
+        {% for item in group.items %}
+        <li>
+          <span class="service-year">{{ item.year }}</span>
+          <span>{{ item.content }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+
+  <details class="service-archive">
+    <summary>
+      Earlier program committee and reviewing service
+      <span aria-hidden="true">+</span>
+    </summary>
+    <div class="archive-grid">
+      <div>
+        <h3>Program committees</h3>
+        {% for item in site.data.service.archive.program_committees %}
+        <p><strong>{{ item.year }}</strong> · {{ item.content }}</p>
+        {% endfor %}
+      </div>
+      <div>
+        <h3>Journal reviewing</h3>
+        {% for item in site.data.service.archive.journal_reviewing %}
+        <p><strong>{{ item.year }}</strong> · {{ item.content }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+</section>

@@ -1,0 +1,75 @@
+# The homepage automatically shows the first item from each group.
+# Add new service items in reverse chronological order.
+groups:
+  - number: "01"
+    title: Organizing
+    home_label: Organizing
+    items:
+      - year: "2027"
+        content: '<a href="https://conf.researchr.org/home/icst-2027">ICST</a> · Posters Track Co-chair'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/icst-2026">ICST</a> · Testing Tools and Data Showcase Track Co-chair'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/ssbse-2026">SSBSE</a> · Publicity Co-chair'
+      - year: "2026"
+        content: '<a href="https://search-based-and-fuzz-testing.github.io/sbft26/">SBFT</a> &amp; <a href="https://conf.researchr.org/home/icse-2026/deeptest-2026">DeepTest</a> · Workshop Co-organizer'
+      - year: "2025"
+        content: '<a href="https://conf.researchr.org/home/icse-2025/deeptest-2025">DeepTest</a> · Workshop Co-organizer'
+
+  - number: "02"
+    title: Program committees
+    home_label: Program committee
+    items:
+      - year: "2027"
+        content: '<a href="https://conf.researchr.org/home/icse-2027">ICSE</a> · Research Track'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/ase-2026">ASE</a> · Research Track'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/track/eseiw-2026/eseiw-2026-esem---technical-track">ESEM</a> · Research Track'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/icst-2026">ICST</a> · Education Track'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/icst-2026/mutation-2026">Mutation</a> · <a href="https://conf.researchr.org/home/ase-2026/rase-2026">RASE</a>'
+      - year: "2025"
+        content: '<a href="https://conf.researchr.org/home/issta-2025">ISSTA</a> · Research Track'
+      - year: "2025"
+        content: '<a href="https://conf.researchr.org/home/ase-2025">ASE</a> · NIER &amp; Student Research Competition'
+      - year: "2025"
+        content: '<a href="https://conf.researchr.org/home/ssbse-2025">SSBSE</a>, <a href="https://sbft25.github.io/">SBFT</a>, <a href="https://conf.researchr.org/home/icst-2025/mutation-2025">Mutation</a> &amp; <a href="https://demessai.github.io/">DeMeSSAI</a>'
+
+  - number: "03"
+    title: Reviewing
+    home_label: Reviewing
+    items:
+      - year: "2026"
+        content: 'Reviewer · EMSE'
+      - year: "2025"
+        content: '<a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM Board of Distinguished Reviewers</a>'
+      - year: "2025"
+        content: 'Reviewer · TSE, TOSEM, EMSE, STVR &amp; IEEE Computer'
+      - year: "2024"
+        content: '<a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM Board of Distinguished Reviewers</a>'
+      - year: "2024"
+        content: 'Reviewer · TSE, TOSEM, EMSE, JSEP &amp; JSS'
+      - year: "2023"
+        content: 'Reviewer · TSE, TOSEM, EMSE &amp; JSEP'
+
+archive:
+  program_committees:
+    - year: "2024"
+      content: 'SCAM (Research), ICSE (Demonstrations), ASE (Demonstrations &amp; NIER), DeepTest, Mutation'
+    - year: "2023"
+      content: 'Mutation, ASE (NIER), ICSME (Artifact Evaluation)'
+    - year: "2022"
+      content: 'Mutation, ICST (Poster), ICSME (Registered Reports &amp; Artifact Evaluation)'
+    - year: "2021"
+      content: 'Mutation, ICSME (Artifact Evaluation)'
+    - year: "2020"
+      content: 'Mutation'
+  journal_reviewing:
+    - year: "2022"
+      content: 'TOSEM, JSEP'
+    - year: "2021"
+      content: 'TOSEM, STVR'
+    - year: "2020"
+      content: 'IST, JSS'

@@ -1,17 +1,21 @@
 ---
 ---
-<article class="bib-entry">
-  <div class="publication-main">
-    {% if entry.link %}
-    <a class="venue-badge" href="{{ entry.link }}" target="_blank" rel="noopener">
-      {{ entry.series }} · {{ entry.year }}
-    </a>
-    {% else %}
-    <p class="venue-badge">{{ entry.series }} · {{ entry.year }}</p>
-    {% endif %}
-    <h4 class="publication-name">{{ entry.title }}</h4>
-
-    <p class="publication-authors">
+<article class="featured-item">
+  <p class="featured-index" aria-hidden="true">
+    {%- if index < 10 -%}0{%- endif -%}{{ index }}
+  </p>
+  <div class="featured-body">
+    <p class="featured-meta">
+      {% if entry.link %}
+      <a href="{{ entry.link }}" target="_blank" rel="noopener">
+        <span>{{ entry.series }}</span> {{ entry.year }}
+      </a>
+      {% else %}
+      <span>{{ entry.series }}</span> {{ entry.year }}
+      {% endif %}
+    </p>
+    <h3>{{ entry.title }}</h3>
+    <p class="featured-authors">
       {%- assign authors = entry.author | split: ' and ' -%}
       {%- for author in authors -%}
         {%- unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless -%}
@@ -38,24 +42,18 @@
         {%- if author_trimmed contains 'Jinhan Kim' -%}<strong>{{ initials }} {{ last_name }}</strong>{%- else -%}{{ initials }} {{ last_name }}{%- endif -%}
       {%- endfor -%}
     </p>
-
-    {% if entry.keywords == "journal" %}
-      <p class="publication-venue">{{ entry.journal }}</p>
-    {% else %}
-      <p class="publication-venue">{{ entry.booktitle }}</p>
-    {% endif %}
-
-    {% if entry.memo %}
-    <p class="publication-note"><span aria-hidden="true">✦</span> {{ entry.memo }}</p>
-    {% endif %}
   </div>
-
-  <div class="publication-actions">
-    {% if links.pdf %}
-    <a class="publication-link" href="{{ links.pdf }}" target="_blank" rel="noopener">
-      PDF
-      <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8" /></svg>
-    </a>
-    {% endif %}
-  </div>
+  {% if links.pdf %}
+  <a
+    class="icon-link"
+    href="{{ links.pdf }}"
+    target="_blank"
+    rel="noopener"
+    aria-label="Read PDF: {{ entry.title | escape }}"
+  >
+    <svg aria-hidden="true" viewBox="0 0 20 20">
+      <path d="M5 15 15 5M7 5h8v8" />
+    </svg>
+  </a>
+  {% endif %}
 </article>

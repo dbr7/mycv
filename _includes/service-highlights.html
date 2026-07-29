@@ -1,0 +1,30 @@
+<section
+  class="content-section service-highlight-section"
+  id="service-highlights"
+  aria-labelledby="service-highlights-title"
+>
+  <header class="content-section-header section-header-row">
+    <div>
+      <p class="section-label">
+        <span aria-hidden="true"></span>Organizing &amp; reviewing
+      </p>
+      <h2 id="service-highlights-title">Recent service</h2>
+    </div>
+    <a class="section-link" href="{{ '/service/' | relative_url }}">View all</a>
+  </header>
+
+  <ol class="service-highlight-list">
+    {% for group in site.data.service.groups %}
+    {% assign item = group.items | first %}
+    <li>
+      <article class="service-highlight-item">
+        <p class="service-highlight-year">{{ item.year }}</p>
+        <div class="service-highlight-body">
+          <h3>{{ group.home_label }}</h3>
+          <p>{{ item.content }}</p>
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
