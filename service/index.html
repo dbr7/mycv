@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta
+      name="description"
+      content="Jinhan Kim is a software engineering researcher working on software testing, reliability, and assurance of learning-enabled systems."
+    />
+    <meta
+      name="keywords"
+      content="Jinhan Kim, software engineering, software testing, AI assurance, learning-enabled systems, USI, KAIST"
+    />
+    <meta name="author" content="Jinhan Kim" />
+    <meta name="theme-color" content="#f3f4f5" />
+    <script>
+      (() => {
+        const storageKey = "jinhan-color-theme";
+        let theme;
+
+        try {
+          theme = window.localStorage.getItem(storageKey);
+        } catch (error) {
+          theme = null;
+        }
+
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", theme === "dark" ? "#000000" : "#f3f4f5");
+      })();
+    </script>
+
+    <link
+      rel="icon"
+      href="/assets/favicon/favicon.ico?v=2"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon/favicon-32x32.png?v=2"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/favicon/apple-touch-icon.png?v=2"
+      sizes="180x180"
+    />
+    <title>Community service | Jinhan Kim</title>
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css?v=9-1785361315"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"
+      integrity="sha384-XmJ9SoHtVOHoQUcKvFAzVXwdkKo1Ie3bhmSoIAkcdsHGaIrVJIkmozyq0FJeb/Ly"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="/assets/js/main.js?v=9-1785361315"
+      defer
+    ></script>
+  </head>
+
+  <body class="page-service">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="mobile-header" aria-label="Mobile site header">
+      <div class="mobile-header-inner">
+        <a class="mobile-brand" href="/" aria-label="Jinhan Kim, home">
+          <span class="mobile-brand-name">
+            Jinhan Kim<span class="mobile-brand-mark" aria-hidden="true"></span>
+          </span>
+          <span class="mobile-brand-role">Software testing · AI assurance</span>
+        </a>
+        <div class="mobile-header-actions">
+          <button class="theme-toggle theme-toggle-mobile" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle>
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-thumb"></span>
+            </span>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-shell" id="top">
+      <button class="theme-toggle theme-toggle-desktop" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle>
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+      </button>
+
+      <aside class="profile-panel" aria-label="Profile and site navigation">
+        <div class="profile-sticky">
+          <figure class="profile-portrait" data-portrait-animation>
+            <a class="profile-portrait-link" href="/" aria-label="Jinhan Kim, home">
+              <img class="profile-portrait-image" src="/assets/images/profile_resized.jpg" alt="Portrait of Jinhan Kim" width="600" height="600">
+            </a>
+          </figure>
+
+          <p class="profile-role">
+            <span class="status-dot" aria-hidden="true"></span>
+            Postdoctoral researcher
+          </p>
+          <h1 class="profile-name">
+            <a href="/">Jinhan Kim</a>
+          </h1>
+          <p class="profile-tagline">
+            Software testing, reliability &amp; AI assurance
+          </p>
+
+          <div class="profile-affiliation">
+            <p>
+              <a href="https://www.si.usi.ch/" target="_blank" rel="noopener noreferrer">Software Institute</a><br>
+              <a href="https://www.usi.ch/en" target="_blank" rel="noopener noreferrer">Università della Svizzera italiana</a>
+            </p>
+            <address class="profile-office">
+              Office D3.18 (Level P3), Sector D<br>
+              Campus East, Via la Santa 1<br>
+              6962 Viganello, Switzerland
+            </address>
+          </div>
+
+          <div class="profile-dock">
+            <nav class="profile-nav" id="site-nav" aria-label="Primary navigation">
+              <a href="/">
+                <span class="nav-index">01</span>
+                <span>About</span>
+              </a>
+              <a href="/publications/">
+                <span class="nav-index">02</span>
+                <span>Publications</span>
+              </a>
+              <a href="/service/" class="is-current" aria-current="page">
+                <span class="nav-index">03</span>
+                <span>Service</span>
+              </a>
+            </nav>
+
+            <div class="profile-actions" aria-label="Profile links">
+            <a class="action-button action-button-primary" href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">
+              Curriculum vitae
+              <svg aria-hidden="true" viewbox="0 0 20 20">
+                <path d="M5 15 15 5M7 5h8v8"></path>
+              </svg>
+            </a>
+            <a class="action-button action-button-neutral" href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">
+              Google Scholar
+              <svg aria-hidden="true" viewbox="0 0 20 20">
+                <path d="M5 15 15 5M7 5h8v8"></path>
+              </svg>
+            </a>
+            </div>
+
+            <a class="profile-contact" href="mailto:jinhan.kim@usi.ch">
+              <span>Email</span>
+              jinhan.kim@usi.ch
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel" id="main-content">
+        <section class="content-section service-section" id="service" aria-labelledby="service-title">
+  <header class="content-section-header">
+    <p class="section-label">
+      <span aria-hidden="true"></span>Organizing &amp; reviewing
+    </p>
+    <h2 id="service-title">Community service</h2>
+  </header>
+
+  <div class="service-groups">
+    
+    <article class="service-group">
+      <header>
+        <span aria-hidden="true">01</span>
+        <h3>Organizing</h3>
+      </header>
+      <ul class="service-list">
+        
+        <li>
+          <span class="service-year">2027</span>
+          <span><a href="https://conf.researchr.org/home/icst-2027" target="_blank" rel="noopener noreferrer">ICST</a> · Posters Track Co-chair</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://conf.researchr.org/home/icst-2026" target="_blank" rel="noopener noreferrer">ICST</a> · Testing Tools and Data Showcase Track Co-chair</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://conf.researchr.org/home/ssbse-2026" target="_blank" rel="noopener noreferrer">SSBSE</a> · Publicity Co-chair</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://search-based-and-fuzz-testing.github.io/sbft26/" target="_blank" rel="noopener noreferrer">SBFT</a> &amp; <a href="https://conf.researchr.org/home/icse-2026/deeptest-2026" target="_blank" rel="noopener noreferrer">DeepTest</a> · Workshop Co-organizer</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2025</span>
+          <span><a href="https://conf.researchr.org/home/icse-2025/deeptest-2025" target="_blank" rel="noopener noreferrer">DeepTest</a> · Workshop Co-organizer</span>
+        </li>
+        
+      </ul>
+    </article>
+    
+    <article class="service-group">
+      <header>
+        <span aria-hidden="true">02</span>
+        <h3>Program committees</h3>
+      </header>
+      <ul class="service-list">
+        
+        <li>
+          <span class="service-year">2027</span>
+          <span><a href="https://conf.researchr.org/home/icse-2027" target="_blank" rel="noopener noreferrer">ICSE</a> · Research Track</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://conf.researchr.org/home/ase-2026" target="_blank" rel="noopener noreferrer">ASE</a> · Research Track</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://conf.researchr.org/track/eseiw-2026/eseiw-2026-esem---technical-track" target="_blank" rel="noopener noreferrer">ESEM</a> · Research Track</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://conf.researchr.org/home/icst-2026" target="_blank" rel="noopener noreferrer">ICST</a> · Education Track</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span><a href="https://conf.researchr.org/home/icst-2026/mutation-2026" target="_blank" rel="noopener noreferrer">Mutation</a> · <a href="https://conf.researchr.org/home/ase-2026/rase-2026" target="_blank" rel="noopener noreferrer">RASE</a></span>
+        </li>
+        
+        <li>
+          <span class="service-year">2025</span>
+          <span><a href="https://conf.researchr.org/home/issta-2025" target="_blank" rel="noopener noreferrer">ISSTA</a> · Research Track</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2025</span>
+          <span><a href="https://conf.researchr.org/home/ase-2025" target="_blank" rel="noopener noreferrer">ASE</a> · NIER &amp; Student Research Competition</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2025</span>
+          <span><a href="https://conf.researchr.org/home/ssbse-2025" target="_blank" rel="noopener noreferrer">SSBSE</a>, <a href="https://sbft25.github.io/" target="_blank" rel="noopener noreferrer">SBFT</a>, <a href="https://conf.researchr.org/home/icst-2025/mutation-2025" target="_blank" rel="noopener noreferrer">Mutation</a> &amp; <a href="https://demessai.github.io/" target="_blank" rel="noopener noreferrer">DeMeSSAI</a></span>
+        </li>
+        
+      </ul>
+    </article>
+    
+    <article class="service-group">
+      <header>
+        <span aria-hidden="true">03</span>
+        <h3>Reviewing</h3>
+      </header>
+      <ul class="service-list">
+        
+        <li>
+          <span class="service-year">2026</span>
+          <span>Reviewer · EMSE</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2025</span>
+          <span><a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board" target="_blank" rel="noopener noreferrer">TOSEM Board of Distinguished Reviewers</a></span>
+        </li>
+        
+        <li>
+          <span class="service-year">2025</span>
+          <span>Reviewer · TSE, TOSEM, EMSE, STVR &amp; IEEE Computer</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2024</span>
+          <span><a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board" target="_blank" rel="noopener noreferrer">TOSEM Board of Distinguished Reviewers</a></span>
+        </li>
+        
+        <li>
+          <span class="service-year">2024</span>
+          <span>Reviewer · TSE, TOSEM, EMSE, JSEP &amp; JSS</span>
+        </li>
+        
+        <li>
+          <span class="service-year">2023</span>
+          <span>Reviewer · TSE, TOSEM, EMSE &amp; JSEP</span>
+        </li>
+        
+      </ul>
+    </article>
+    
+  </div>
+
+  <details class="service-archive">
+    <summary>
+      Earlier program committee and reviewing service
+      <span aria-hidden="true">+</span>
+    </summary>
+    <div class="archive-grid">
+      <div>
+        <h3>Program committees</h3>
+        
+        <p><strong>2024</strong> · SCAM (Research), ICSE (Demonstrations), ASE (Demonstrations &amp; NIER), DeepTest, Mutation</p>
+        
+        <p><strong>2023</strong> · Mutation, ASE (NIER), ICSME (Artifact Evaluation)</p>
+        
+        <p><strong>2022</strong> · Mutation, ICST (Poster), ICSME (Registered Reports &amp; Artifact Evaluation)</p>
+        
+        <p><strong>2021</strong> · Mutation, ICSME (Artifact Evaluation)</p>
+        
+        <p><strong>2020</strong> · Mutation</p>
+        
+      </div>
+      <div>
+        <h3>Journal reviewing</h3>
+        
+        <p><strong>2022</strong> · TOSEM, JSEP</p>
+        
+        <p><strong>2021</strong> · TOSEM, STVR</p>
+        
+        <p><strong>2020</strong> · IST, JSS</p>
+        
+      </div>
+    </div>
+  </details>
+</section>
+
+
+
+        <footer class="site-footer">
+          <div>
+            <p class="footer-name">Jinhan Kim</p>
+            <p>Software testing, reliability &amp; AI assurance</p>
+          </div>
+          <div class="footer-links" aria-label="Footer links">
+            <a href="mailto:jinhan.kim@usi.ch">Email</a>
+            <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">Scholar</a>
+            <a href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">CV</a>
+          </div>
+          <p>Last updated July 2026</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
