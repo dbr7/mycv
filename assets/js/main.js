@@ -275,7 +275,7 @@
       group.querySelectorAll(".publication-list > ol.bibliography > li"),
     );
     const toggle = group.querySelector(".publication-toggle");
-    const visibleCount = Number.parseInt(group.dataset.visibleCount, 10) || 4;
+    const visibleCount = Number.parseInt(group.dataset.visibleCount, 10) || 3;
 
     if (!toggle || items.length <= visibleCount) {
       if (toggle) toggle.hidden = true;
