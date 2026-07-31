@@ -29,7 +29,7 @@ permalink: /publications/
 {% endcapture %}
 <section
   class="publication-group"
-  data-visible-count="4"
+  data-visible-count="3"
   data-publication-label="journal articles"
   aria-labelledby="journal-publications-title"
 >
@@ -53,7 +53,7 @@ permalink: /publications/
 {% endcapture %}
 <section
   class="publication-group"
-  data-visible-count="4"
+  data-visible-count="3"
   data-publication-label="conference &amp; workshop papers"
   aria-labelledby="conference-publications-title"
 >
