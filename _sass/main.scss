@@ -1066,12 +1066,49 @@ html[data-theme="dark"] .theme-toggle-thumb {
   line-height: var(--seed-line-height-t8);
 }
 
+.publication-group {
+  display: grid;
+  align-items: start;
+  grid-template-columns: clamp(132px, 22%, 168px) minmax(0, 1fr);
+  grid-template-areas:
+    "heading list"
+    ". toggle";
+  column-gap: var(--seed-dimension-x6);
+}
+
 .publication-group + .publication-group {
-  margin-top: var(--seed-dimension-x12);
+  margin-top: var(--seed-dimension-x16);
+  padding-top: var(--seed-dimension-x10);
+  border-top: 1px solid var(--site-color-stroke-soft);
 }
 
 .publication-group .bibliography-heading {
-  margin-top: 0;
+  display: flex;
+  margin: 0;
+  padding-top: var(--seed-dimension-x6);
+  align-items: flex-start;
+  gap: var(--seed-dimension-x3);
+  grid-area: heading;
+}
+
+.publication-group .bibliography-heading::before {
+  width: 4px;
+  height: 28px;
+  margin-top: 1px;
+  flex: 0 0 auto;
+  border-radius: var(--seed-radius-full);
+  background: var(--seed-color-bg-brand-solid);
+  content: "";
+}
+
+.publication-list {
+  min-width: 0;
+  grid-area: list;
+}
+
+.publication-group .publication-toggle {
+  justify-self: start;
+  grid-area: toggle;
 }
 
 ol.bibliography {
@@ -1286,33 +1323,33 @@ a.venue-badge:hover {
   transform: translate(1px, -1px);
 }
 
-.service-groups {
-  border-top: 1px solid var(--seed-color-stroke-neutral-weak);
-}
-
 .service-group {
   display: grid;
-  margin: 0 -12px;
-  padding: var(--seed-dimension-x7) var(--seed-dimension-x3);
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: var(--seed-dimension-x8);
-  border-bottom: 1px solid var(--seed-color-stroke-neutral-weak);
-  border-radius: var(--seed-radius-r3);
-  transition: background-color var(--seed-duration-d3)
-    var(--seed-timing-function-easing);
+  align-items: start;
+  grid-template-columns: clamp(132px, 22%, 168px) minmax(0, 1fr);
+  column-gap: var(--seed-dimension-x6);
 }
 
-.service-group:hover,
-.service-group:focus-within {
-  background: var(--seed-color-bg-layer-default-pressed);
+.service-group + .service-group {
+  margin-top: var(--seed-dimension-x16);
+  padding-top: var(--seed-dimension-x10);
+  border-top: 1px solid var(--site-color-stroke-soft);
 }
 
-.service-group header > span {
-  display: block;
-  margin-bottom: var(--seed-dimension-x2);
-  color: var(--seed-color-fg-brand);
-  font-size: var(--seed-font-size-t3);
-  font-weight: var(--seed-font-weight-bold);
+.service-group header {
+  display: flex;
+  padding-top: var(--seed-dimension-x3);
+  align-items: flex-start;
+  gap: var(--seed-dimension-x3);
+}
+
+.service-group header::before {
+  width: 4px;
+  height: 27px;
+  flex: 0 0 auto;
+  border-radius: var(--seed-radius-full);
+  background: var(--seed-color-bg-brand-solid);
+  content: "";
 }
 
 .service-group h3 {
@@ -1326,6 +1363,7 @@ a.venue-badge:hover {
 .service-list {
   margin: 0;
   padding: 0;
+  border-top: 1px solid var(--seed-color-stroke-neutral-weak);
   list-style: none;
 }
 
@@ -1340,15 +1378,6 @@ a.venue-badge:hover {
   line-height: 1.55;
 }
 
-.service-list li:first-child {
-  padding-top: 0;
-}
-
-.service-list li:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
 .service-year {
   color: var(--seed-color-fg-neutral-subtle);
   font-size: var(--seed-font-size-t3);
@@ -1356,7 +1385,7 @@ a.venue-badge:hover {
 }
 
 .service-archive {
-  margin-top: var(--seed-dimension-x8);
+  margin-top: var(--seed-dimension-x16);
   overflow: hidden;
   border-radius: var(--seed-radius-r3);
   background: var(--seed-color-bg-neutral-weak);
@@ -1933,6 +1962,20 @@ a.venue-badge:hover {
     font-size: var(--seed-font-size-t4);
   }
 
+  .publication-group {
+    display: block;
+  }
+
+  .publication-group + .publication-group {
+    margin-top: var(--seed-dimension-x12);
+    padding-top: var(--seed-dimension-x8);
+  }
+
+  .publication-group .bibliography-heading {
+    margin-bottom: var(--seed-dimension-x4);
+    padding-top: 0;
+  }
+
   .bib-entry {
     display: block;
   }
@@ -1946,8 +1989,14 @@ a.venue-badge:hover {
     display: block;
   }
 
+  .service-group + .service-group {
+    margin-top: var(--seed-dimension-x12);
+    padding-top: var(--seed-dimension-x8);
+  }
+
   .service-group header {
-    margin-bottom: var(--seed-dimension-x5);
+    margin-bottom: var(--seed-dimension-x4);
+    padding-top: 0;
   }
 
   .archive-grid {

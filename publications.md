@@ -72,7 +72,9 @@ permalink: /publications/
   </button>
 </section>
 
-<h3 class="bibliography-heading" style="counter-reset:bibitem 2">Thesis</h3>
+<section class="publication-group publication-thesis-group" aria-labelledby="thesis-title">
+<h3 class="bibliography-heading" id="thesis-title" style="counter-reset:bibitem 2">Thesis</h3>
+<div class="publication-list">
 <ol class="bibliography">
   <li>
     <article class="bib-entry">
@@ -91,5 +93,7 @@ permalink: /publications/
     </article>
   </li>
 </ol>
+</div>
+</section>
   </div>
 </section>
