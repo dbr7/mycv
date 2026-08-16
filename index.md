@@ -9,5 +9,3 @@ permalink: /
 {% include selected-work.html %}
 
 {% include news.html limit=4 %}
-
-{% include service-highlights.html %}

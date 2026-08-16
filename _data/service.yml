@@ -1,5 +1,5 @@
-# The homepage automatically shows the first item from each group.
-# Add new service items in reverse chronological order.
+# The service page shows every item in each group.
+# Keep new service items in reverse chronological order.
 groups:
   - number: "01"
     title: Organizing
@@ -36,6 +36,16 @@ groups:
         content: '<a href="https://conf.researchr.org/home/ase-2025">ASE</a> · NIER &amp; Student Research Competition'
       - year: "2025"
         content: '<a href="https://conf.researchr.org/home/ssbse-2025">SSBSE</a>, <a href="https://sbft25.github.io/">SBFT</a>, <a href="https://conf.researchr.org/home/icst-2025/mutation-2025">Mutation</a> &amp; <a href="https://demessai.github.io/">DeMeSSAI</a>'
+      - year: "2024"
+        content: 'SCAM (Research), ICSE (Demonstrations), ASE (Demonstrations &amp; NIER), DeepTest, Mutation'
+      - year: "2023"
+        content: 'Mutation, ASE (NIER), ICSME (Artifact Evaluation)'
+      - year: "2022"
+        content: 'Mutation, ICST (Poster), ICSME (Registered Reports &amp; Artifact Evaluation)'
+      - year: "2021"
+        content: 'Mutation, ICSME (Artifact Evaluation)'
+      - year: "2020"
+        content: 'Mutation'
 
   - number: "03"
     title: Reviewing
@@ -53,23 +63,9 @@ groups:
         content: 'Reviewer · TSE, TOSEM, EMSE, JSEP &amp; JSS'
       - year: "2023"
         content: 'Reviewer · TSE, TOSEM, EMSE &amp; JSEP'
-
-archive:
-  program_committees:
-    - year: "2024"
-      content: 'SCAM (Research), ICSE (Demonstrations), ASE (Demonstrations &amp; NIER), DeepTest, Mutation'
-    - year: "2023"
-      content: 'Mutation, ASE (NIER), ICSME (Artifact Evaluation)'
-    - year: "2022"
-      content: 'Mutation, ICST (Poster), ICSME (Registered Reports &amp; Artifact Evaluation)'
-    - year: "2021"
-      content: 'Mutation, ICSME (Artifact Evaluation)'
-    - year: "2020"
-      content: 'Mutation'
-  journal_reviewing:
-    - year: "2022"
-      content: 'TOSEM, JSEP'
-    - year: "2021"
-      content: 'TOSEM, STVR'
-    - year: "2020"
-      content: 'IST, JSS'
+      - year: "2022"
+        content: 'Reviewer · TOSEM, JSEP'
+      - year: "2021"
+        content: 'Reviewer · TOSEM, STVR'
+      - year: "2020"
+        content: 'Reviewer · IST, JSS'

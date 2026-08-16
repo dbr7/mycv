@@ -29,23 +29,15 @@ permalink: /publications/
 {% endcapture %}
 <section
   class="publication-group"
-  data-visible-count="3"
-  data-publication-label="journal articles"
   aria-labelledby="journal-publications-title"
 >
-  <h3 class="bibliography-heading" id="journal-publications-title" style="counter-reset:bibitem {{numJournalPapers|plus:1}}">Journals</h3>
+  <h3 class="bibliography-heading" id="journal-publications-title" style="counter-reset:bibitem {{numJournalPapers|plus:1}}">
+    <span>Journals</span>
+    <span class="publication-count">{{ numJournalPapers | strip }} papers</span>
+  </h3>
   <div class="publication-list" id="journal-publications">
     {% bibliography --file my --query @article %}
   </div>
-  <button
-    class="publication-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="journal-publications"
-  >
-    <span>Show earlier journal articles</span>
-    <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 8 5 5 5-5" /></svg>
-  </button>
 </section>
 
 {% capture numConfPapers %}
@@ -53,27 +45,22 @@ permalink: /publications/
 {% endcapture %}
 <section
   class="publication-group"
-  data-visible-count="3"
-  data-publication-label="conference &amp; workshop papers"
   aria-labelledby="conference-publications-title"
 >
-  <h3 class="bibliography-heading" id="conference-publications-title" style="counter-reset:bibitem {{numConfPapers|plus:1}}">Conferences &amp; workshops</h3>
+  <h3 class="bibliography-heading" id="conference-publications-title" style="counter-reset:bibitem {{numConfPapers|plus:1}}">
+    <span>Conferences &amp; workshops</span>
+    <span class="publication-count">{{ numConfPapers | strip }} papers</span>
+  </h3>
   <div class="publication-list" id="conference-publications">
     {% bibliography --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full || keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
   </div>
-  <button
-    class="publication-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="conference-publications"
-  >
-    <span>Show earlier conference &amp; workshop papers</span>
-    <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 8 5 5 5-5" /></svg>
-  </button>
 </section>
 
 <section class="publication-group publication-thesis-group" aria-labelledby="thesis-title">
-<h3 class="bibliography-heading" id="thesis-title" style="counter-reset:bibitem 2">Thesis</h3>
+<h3 class="bibliography-heading" id="thesis-title" style="counter-reset:bibitem 2">
+  <span>Thesis</span>
+  <span class="publication-count">1 dissertation</span>
+</h3>
 <div class="publication-list">
 <ol class="bibliography">
   <li>

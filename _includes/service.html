@@ -11,41 +11,26 @@
   </header>
 
   <div class="service-groups">
-    {% for group in site.data.service.groups %}
+    {%- for group in site.data.service.groups %}
+    {%- assign items_by_year = group.items | group_by: "year" %}
     <article class="service-group">
       <header>
         <h3>{{ group.title }}</h3>
+        <span class="service-count">{{ items_by_year | size }} years</span>
       </header>
       <ul class="service-list">
-        {% for item in group.items %}
+        {%- for year_group in items_by_year %}
         <li>
-          <span class="service-year">{{ item.year }}</span>
-          <span>{{ item.content }}</span>
+          <span class="service-year">{{ year_group.name }}</span>
+          <span class="service-year-entries">
+            {%- for item in year_group.items %}
+              <span class="service-year-entry">{{ item.content }}</span>{% unless forloop.last %}<span class="service-year-separator">; </span>{% endunless %}
+            {%- endfor %}
+          </span>
         </li>
-        {% endfor %}
+        {%- endfor %}
       </ul>
     </article>
-    {% endfor %}
+    {%- endfor %}
   </div>
-
-  <details class="service-archive">
-    <summary>
-      Earlier program committee and reviewing service
-      <span aria-hidden="true">+</span>
-    </summary>
-    <div class="archive-grid">
-      <div>
-        <h3>Program committees</h3>
-        {% for item in site.data.service.archive.program_committees %}
-        <p><strong>{{ item.year }}</strong> · {{ item.content }}</p>
-        {% endfor %}
-      </div>
-      <div>
-        <h3>Journal reviewing</h3>
-        {% for item in site.data.service.archive.journal_reviewing %}
-        <p><strong>{{ item.year }}</strong> · {{ item.content }}</p>
-        {% endfor %}
-      </div>
-    </div>
-  </details>
 </section>
