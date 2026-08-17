@@ -980,12 +980,9 @@ html[data-theme="dark"] .glass::before {
 
 .bib-entry {
   position: relative;
-  display: grid;
+  display: block;
   margin: 0 -8px;
   padding: 15px 8px;
-  align-items: start;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 15px;
   border-radius: 13px;
   transition: background-color 220ms var(--ease-fluid);
 }
@@ -1052,6 +1049,42 @@ html[data-theme="dark"] .venue-badge {
   font-weight: 720;
   letter-spacing: -0.014em;
   line-height: 1.44;
+}
+
+.publication-title-link {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.16em;
+  transition: text-decoration-color 200ms var(--ease-fluid);
+}
+
+.publication-title-cue {
+  display: inline-block;
+  margin-left: 0.3em;
+  color: var(--ink-tertiary);
+  font-size: 0.7em;
+  font-weight: 680;
+  line-height: 1;
+  opacity: 0.72;
+  transform: translateY(-0.08em);
+  transition:
+    color 200ms var(--ease-fluid),
+    opacity 200ms var(--ease-fluid),
+    transform 200ms var(--ease-fluid);
+}
+
+.publication-title-link:hover,
+.publication-title-link:focus-visible {
+  text-decoration-color: color-mix(in srgb, var(--accent) 48%, transparent);
+}
+
+.publication-title-link:hover .publication-title-cue,
+.publication-title-link:focus-visible .publication-title-cue {
+  color: var(--accent-deep);
+  opacity: 1;
+  transform: translate(0.08em, -0.16em);
 }
 
 .publication-authors,
@@ -1127,49 +1160,6 @@ html[data-theme="dark"] .venue-badge {
 
 .publication-note .note-gradient-edge {
   stop-color: var(--note-liquid-edge);
-}
-
-.publication-actions {
-  display: flex;
-  padding-top: 1px;
-}
-
-.publication-actions:empty {
-  display: none;
-}
-
-.publication-link {
-  display: inline-flex;
-  min-height: 28px;
-  padding: 0 9px;
-  align-items: center;
-  gap: 3px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  color: var(--ink-muted);
-  font-size: 0.7rem;
-  font-weight: 720;
-  text-decoration: none;
-  transition:
-    background-color 200ms var(--ease-fluid),
-    color 200ms var(--ease-fluid),
-    transform 200ms var(--ease-fluid);
-}
-
-.publication-link:hover {
-  background: var(--reading-solid);
-  color: var(--ink);
-  transform: translateY(-1px);
-}
-
-.publication-link svg {
-  width: 13px;
-  height: 13px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
 }
 
 .service-groups {
@@ -1603,14 +1593,7 @@ html[data-theme="dark"] .venue-badge {
   }
 
   .bib-entry {
-    display: block;
-    padding-right: 61px;
-  }
-
-  .publication-actions {
-    position: absolute;
-    top: 14px;
-    right: 8px;
+    padding-right: 8px;
   }
 
   .publication-name {
