@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Jinhan Kim is a software engineering researcher working on software testing, reliability, and assurance of learning-enabled systems."
+    />
+    <meta
+      name="keywords"
+      content="Jinhan Kim, software engineering, software testing, AI assurance, learning-enabled systems, USI, KAIST"
+    />
+    <meta name="author" content="Jinhan Kim" />
+    <meta name="theme-color" content="#eef0f2" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <script>
+      (() => {
+        const storageKey = "jinhan-color-theme";
+        let theme;
+
+        try {
+          theme = window.localStorage.getItem(storageKey);
+        } catch (error) {
+          theme = null;
+        }
+
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", theme === "dark" ? "#0c0e12" : "#eef0f2");
+      })();
+    </script>
+    <link
+      rel="icon"
+      href="{{ '/assets/favicon/favicon.svg' | relative_url }}?v=5"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="{{ '/assets/favicon/favicon.ico' | relative_url }}?v=5"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}?v=5"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}?v=5"
+      sizes="180x180"
+    />
+    <title>
+      {%- if page.page_type == "home" -%}
+        {{ site.title }}
+      {%- else -%}
+        {{ page.title }} | Jinhan Kim
+      {%- endif -%}
+    </title>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/normalize.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/liquid-glass.css' | relative_url }}?v=1-{{ site.time | date: '%s' }}"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"
+      integrity="sha384-XmJ9SoHtVOHoQUcKvFAzVXwdkKo1Ie3bhmSoIAkcdsHGaIrVJIkmozyq0FJeb/Ly"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="{{ '/assets/js/liquid-glass.js' | relative_url }}?v=1-{{ site.time | date: '%s' }}"
+      defer
+    ></script>
+  </head>
+
+  {% assign initial_view = page.page_type %}
+  {% if initial_view == "home" %}{% assign initial_view = "about" %}{% endif %}
+  <body
+    class="page-{{ initial_view }}"
+    data-initial-view="{{ initial_view }}"
+    data-site-root="{{ '/' | relative_url }}"
+  >
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="ambient-canvas" aria-hidden="true">
+      <span class="ambient-field ambient-field-warm"></span>
+      <span class="ambient-field ambient-field-cool"></span>
+      <span class="ambient-field ambient-field-mint"></span>
+      <span class="ambient-grain"></span>
+    </div>
+
+    <button
+      class="glass theme-toggle"
+      type="button"
+      aria-label="Dark mode"
+      aria-pressed="false"
+      data-theme-toggle
+      data-glass
+    >
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      <span class="theme-toggle-track" aria-hidden="true">
+        <span class="theme-toggle-thumb"></span>
+      </span>
+    </button>
+
+    <div class="experience-shell">
+      <aside
+        class="glass profile-panel"
+        id="profile-shell"
+        aria-label="Profile and site navigation"
+        data-glass
+      >
+        {% include profile-liquid.html %}
+      </aside>
+
+      <main class="content-stage" id="main-content">
+        <div
+          class="view-panel{% if initial_view == 'about' %} is-active{% endif %}"
+          data-panel="about"
+          {% unless initial_view == 'about' %}hidden{% endunless %}
+        >
+          {% include about.html %}
+          {% include news.html %}
+          {% include selected-work.html %}
+          {% include footer-liquid.html %}
+        </div>
+        <div
+          class="view-panel{% if initial_view == 'publications' %} is-active{% endif %}"
+          data-panel="publications"
+          {% unless initial_view == 'publications' %}hidden{% endunless %}
+        >
+          {% include publications.html %}
+          {% include footer-liquid.html %}
+        </div>
+        <div
+          class="view-panel{% if initial_view == 'service' %} is-active{% endif %}"
+          data-panel="service"
+          {% unless initial_view == 'service' %}hidden{% endunless %}
+        >
+          {% include service.html %}
+          {% include footer-liquid.html %}
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<div class="profile-sticky">
+  <figure class="profile-portrait" data-portrait-animation>
+    <a
+      class="profile-portrait-link"
+      href="{{ '/' | relative_url }}"
+      aria-label="Jinhan Kim, home"
+    >
+      <img
+        class="profile-portrait-image"
+        src="{{ '/assets/images/profile_resized.jpg' | relative_url }}"
+        alt="Portrait of Jinhan Kim"
+        width="600"
+        height="600"
+      />
+    </a>
+  </figure>
+
+  <h1 class="profile-name">
+    <a href="{{ '/' | relative_url }}">Jinhan Kim</a>
+  </h1>
+  <p class="profile-tagline">
+    Software testing, reliability &amp; AI assurance
+  </p>
+
+  <a
+    class="profile-contact"
+    href="mailto:jinhan.kim@usi.ch"
+    aria-label="Email Jinhan Kim at jinhan.kim@usi.ch"
+  >
+    <svg
+      class="profile-contact-icon"
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+    >
+      <rect x="2.75" y="4.5" width="14.5" height="11" rx="2" />
+      <path d="m3.5 6 6.5 5 6.5-5" />
+    </svg>
+    <span class="profile-contact-address">jinhan.kim@usi.ch</span>
+  </a>
+
+  <div class="profile-affiliation">
+    <p>
+      <a href="https://www.si.usi.ch/">Software Institute</a><br />
+      <a href="https://www.usi.ch/en"
+        >Università della Svizzera italiana</a
+      >
+    </p>
+    <address class="profile-office">
+      Office D3.18 (Level P3), Sector D<br />
+      Campus East, Via la Santa 1<br />
+      6962 Viganello, Switzerland
+    </address>
+  </div>
+
+  <div class="profile-dock">
+    <nav class="profile-nav" id="site-nav" aria-label="Primary navigation">
+      <a
+        href="{{ '/' | relative_url }}"
+        {% if page.page_type == 'home' %}class="is-current" aria-current="page"{% endif %}
+      >
+        <span class="nav-index">01</span>
+        <span>About</span>
+      </a>
+      <a
+        href="{{ '/publications/' | relative_url }}"
+        {% if page.page_type == 'publications' %}class="is-current" aria-current="page"{% endif %}
+      >
+        <span class="nav-index">02</span>
+        <span>Publications</span>
+      </a>
+      <a
+        href="{{ '/service/' | relative_url }}"
+        {% if page.page_type == 'service' %}class="is-current" aria-current="page"{% endif %}
+      >
+        <span class="nav-index">03</span>
+        <span>Service</span>
+      </a>
+    </nav>
+
+    <div class="profile-actions" aria-label="Profile links">
+      <a
+        class="action-button action-button-primary"
+        href="{{ '/assets/files/Jinhan_s_cv.pdf' | relative_url }}"
+        target="_blank"
+        rel="noopener"
+      >
+        Curriculum vitae
+        <svg aria-hidden="true" viewBox="0 0 20 20">
+          <path d="M5 15 15 5M7 5h8v8" />
+        </svg>
+      </a>
+      <a
+        class="action-button action-button-neutral"
+        href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ"
+        target="_blank"
+        rel="noopener"
+      >
+        Google Scholar
+        <svg aria-hidden="true" viewBox="0 0 20 20">
+          <path d="M5 15 15 5M7 5h8v8" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
     <meta
       name="description"
       content="Jinhan Kim is a software engineering researcher working on software testing, reliability, and assurance of learning-enabled systems."
@@ -14,7 +13,8 @@
       content="Jinhan Kim, software engineering, software testing, AI assurance, learning-enabled systems, USI, KAIST"
     />
     <meta name="author" content="Jinhan Kim" />
-    <meta name="theme-color" content="#f3f4f5" />
+    <meta name="theme-color" content="#eef0f2" />
+    <link rel="canonical" href="https://jinhan.me/service/" />
     <script>
       (() => {
         const storageKey = "jinhan-color-theme";
@@ -36,40 +36,38 @@
         document.documentElement.style.colorScheme = theme;
         document
           .querySelector('meta[name="theme-color"]')
-          .setAttribute("content", theme === "dark" ? "#000000" : "#f3f4f5");
+          .setAttribute("content", theme === "dark" ? "#0c0e12" : "#eef0f2");
       })();
     </script>
-
     <link
       rel="icon"
-      href="/assets/favicon/favicon.svg?v=4"
+      href="/assets/favicon/favicon.svg?v=5"
       type="image/svg+xml"
     />
     <link
       rel="icon"
-      href="/assets/favicon/favicon.ico?v=4"
+      href="/assets/favicon/favicon.ico?v=5"
       type="image/x-icon"
     />
     <link
       rel="icon"
-      href="/assets/favicon/favicon-32x32.png?v=4"
+      href="/assets/favicon/favicon-32x32.png?v=5"
       type="image/png"
       sizes="32x32"
     />
     <link
       rel="apple-touch-icon"
-      href="/assets/favicon/apple-touch-icon.png?v=4"
+      href="/assets/favicon/apple-touch-icon.png?v=5"
       sizes="180x180"
     />
     <title>Community service | Jinhan Kim</title>
-
     <link
       rel="stylesheet"
       href="/assets/css/normalize.css"
     />
     <link
       rel="stylesheet"
-      href="/assets/css/style.css?v=9-1786914333"
+      href="/assets/css/liquid-glass.css?v=1-1786959937"
     />
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"
@@ -78,119 +76,1281 @@
       defer
     ></script>
     <script
-      src="/assets/js/main.js?v=9-1786914333"
+      src="/assets/js/liquid-glass.js?v=1-1786959937"
       defer
     ></script>
   </head>
 
-  <body class="page-service">
+
+
+  <body
+    class="page-service"
+    data-initial-view="service"
+    data-site-root="/"
+  >
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="mobile-header" aria-label="Mobile site header">
-      <div class="mobile-header-inner">
-        <a class="mobile-brand" href="/" aria-label="Jinhan Kim, home">
-          <span class="mobile-brand-name">
-            Jinhan Kim<span class="mobile-brand-mark" aria-hidden="true"></span>
-          </span>
-          <span class="mobile-brand-role">Software testing · AI assurance</span>
-        </a>
-        <div class="mobile-header-actions">
-          <button class="theme-toggle theme-toggle-mobile" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle>
-            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-            <span class="theme-toggle-track" aria-hidden="true">
-              <span class="theme-toggle-thumb"></span>
-            </span>
-          </button>
-          <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-            <span class="nav-toggle-icon" aria-hidden="true">
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </header>
+    <div class="ambient-canvas" aria-hidden="true">
+      <span class="ambient-field ambient-field-warm"></span>
+      <span class="ambient-field ambient-field-cool"></span>
+      <span class="ambient-field ambient-field-mint"></span>
+      <span class="ambient-grain"></span>
+    </div>
 
-    <div class="page-shell" id="top">
-      <button class="theme-toggle theme-toggle-desktop" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle>
-        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-        <span class="theme-toggle-track" aria-hidden="true">
-          <span class="theme-toggle-thumb"></span>
-        </span>
-      </button>
+    <button class="glass theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle data-glass>
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      <span class="theme-toggle-track" aria-hidden="true">
+        <span class="theme-toggle-thumb"></span>
+      </span>
+    </button>
 
-      <aside class="profile-panel" aria-label="Profile and site navigation">
+    <div class="experience-shell">
+      <aside class="glass profile-panel" id="profile-shell" aria-label="Profile and site navigation" data-glass>
         <div class="profile-sticky">
-          <figure class="profile-portrait" data-portrait-animation>
-            <a class="profile-portrait-link" href="/" aria-label="Jinhan Kim, home">
-              <img class="profile-portrait-image" src="/assets/images/profile_resized.jpg" alt="Portrait of Jinhan Kim" width="600" height="600">
-            </a>
-          </figure>
+  <figure class="profile-portrait" data-portrait-animation>
+    <a class="profile-portrait-link" href="/" aria-label="Jinhan Kim, home">
+      <img class="profile-portrait-image" src="/assets/images/profile_resized.jpg" alt="Portrait of Jinhan Kim" width="600" height="600">
+    </a>
+  </figure>
 
-          <h1 class="profile-name">
-            <a href="/">Jinhan Kim</a>
-          </h1>
-          <p class="profile-tagline">
-            Software testing, reliability &amp; AI assurance
-          </p>
+  <h1 class="profile-name">
+    <a href="/">Jinhan Kim</a>
+  </h1>
+  <p class="profile-tagline">
+    Software testing, reliability &amp; AI assurance
+  </p>
 
-          <a class="profile-contact" href="mailto:jinhan.kim@usi.ch" aria-label="Email Jinhan Kim at jinhan.kim@usi.ch">
-            <svg class="profile-contact-icon" aria-hidden="true" viewbox="0 0 20 20">
-              <rect x="2.75" y="4.5" width="14.5" height="11" rx="2"></rect>
-              <path d="m3.5 6 6.5 5 6.5-5"></path>
-            </svg>
-            <span class="profile-contact-address">jinhan.kim@usi.ch</span>
-          </a>
+  <a class="profile-contact" href="mailto:jinhan.kim@usi.ch" aria-label="Email Jinhan Kim at jinhan.kim@usi.ch">
+    <svg class="profile-contact-icon" aria-hidden="true" viewbox="0 0 20 20">
+      <rect x="2.75" y="4.5" width="14.5" height="11" rx="2"></rect>
+      <path d="m3.5 6 6.5 5 6.5-5"></path>
+    </svg>
+    <span class="profile-contact-address">jinhan.kim@usi.ch</span>
+  </a>
 
-          <div class="profile-affiliation">
-            <p>
-              <a href="https://www.si.usi.ch/" target="_blank" rel="noopener noreferrer">Software Institute</a><br>
-              <a href="https://www.usi.ch/en" target="_blank" rel="noopener noreferrer">Università della Svizzera italiana</a>
-            </p>
-            <address class="profile-office">
-              Office D3.18 (Level P3), Sector D<br>
-              Campus East, Via la Santa 1<br>
-              6962 Viganello, Switzerland
-            </address>
-          </div>
+  <div class="profile-affiliation">
+    <p>
+      <a href="https://www.si.usi.ch/" target="_blank" rel="noopener noreferrer">Software Institute</a><br>
+      <a href="https://www.usi.ch/en" target="_blank" rel="noopener noreferrer">Università della Svizzera italiana</a>
+    </p>
+    <address class="profile-office">
+      Office D3.18 (Level P3), Sector D<br>
+      Campus East, Via la Santa 1<br>
+      6962 Viganello, Switzerland
+    </address>
+  </div>
 
-          <div class="profile-dock">
-            <nav class="profile-nav" id="site-nav" aria-label="Primary navigation">
-              <a href="/">
-                <span class="nav-index">01</span>
-                <span>About</span>
-              </a>
-              <a href="/publications/">
-                <span class="nav-index">02</span>
-                <span>Publications</span>
-              </a>
-              <a href="/service/" class="is-current" aria-current="page">
-                <span class="nav-index">03</span>
-                <span>Service</span>
-              </a>
-            </nav>
+  <div class="profile-dock">
+    <nav class="profile-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="/">
+        <span class="nav-index">01</span>
+        <span>About</span>
+      </a>
+      <a href="/publications/">
+        <span class="nav-index">02</span>
+        <span>Publications</span>
+      </a>
+      <a href="/service/" class="is-current" aria-current="page">
+        <span class="nav-index">03</span>
+        <span>Service</span>
+      </a>
+    </nav>
 
-            <div class="profile-actions" aria-label="Profile links">
-            <a class="action-button action-button-primary" href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">
-              Curriculum vitae
-              <svg aria-hidden="true" viewbox="0 0 20 20">
-                <path d="M5 15 15 5M7 5h8v8"></path>
-              </svg>
-            </a>
-            <a class="action-button action-button-neutral" href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">
-              Google Scholar
-              <svg aria-hidden="true" viewbox="0 0 20 20">
-                <path d="M5 15 15 5M7 5h8v8"></path>
-              </svg>
-            </a>
-            </div>
+    <div class="profile-actions" aria-label="Profile links">
+      <a class="action-button action-button-primary" href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">
+        Curriculum vitae
+        <svg aria-hidden="true" viewbox="0 0 20 20">
+          <path d="M5 15 15 5M7 5h8v8"></path>
+        </svg>
+      </a>
+      <a class="action-button action-button-neutral" href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">
+        Google Scholar
+        <svg aria-hidden="true" viewbox="0 0 20 20">
+          <path d="M5 15 15 5M7 5h8v8"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
 
-          </div>
-        </div>
       </aside>
 
-      <main class="main-panel" id="main-content">
-        <section class="content-section service-section" id="service" aria-labelledby="service-title">
+      <main class="content-stage" id="main-content">
+        <div class="view-panel" data-panel="about" hidden>
+          <section class="content-section intro-section" id="about" aria-labelledby="about-title">
+  <header class="content-section-header">
+    <p class="section-label"><span aria-hidden="true"></span>About</p>
+    <h2 id="about-title">
+      Making software and AI dependable.
+    </h2>
+  </header>
+
+  <div class="intro-copy">
+    <p class="lead">
+      I am a postdoctoral researcher at the TAU Lab at
+      <a href="https://www.usi.ch/en" target="_blank" rel="noopener noreferrer">Università della Svizzera italiana (USI)</a>, led by
+      <a href="https://www.inf.usi.ch/faculty/tonella/#/" target="_blank" rel="noopener noreferrer">Prof. Paolo Tonella</a>.
+    </p>
+    <p>
+      I completed my Ph.D. at <a href="https://kaist.ac.kr/en/" target="_blank" rel="noopener noreferrer">KAIST</a>
+      under the supervision of
+      <a href="https://coinse.github.io/members/shin.yoo/" target="_blank" rel="noopener noreferrer">Prof. Shin Yoo</a>.
+      My research bridges software engineering and artificial intelligence,
+      with a focus on testing, reliability, robustness, interpretability, and
+      assurance for learning-enabled systems.
+    </p>
+  </div>
+
+  <ul class="research-topics" aria-label="Research topics">
+    <li>Software testing</li>
+    <li>AI assurance</li>
+    <li>Learning-enabled systems</li>
+    <li>Robustness &amp; interpretability</li>
+  </ul>
+</section>
+
+          <section class="content-section news-section" id="news" aria-labelledby="news-title">
+  <header class="content-section-header">
+    <p class="section-label"><span aria-hidden="true"></span>Updates</p>
+    <h2 id="news-title">Latest news</h2>
+  </header>
+
+  <div class="news-list" id="news-list">
+
+
+    <article class="news-item">
+      <time datetime="2026-07-28">
+        <span>Jul</span>
+        2026
+      </time>
+      <div>
+<p>Our paper “When Knowledge Changes: Metamorphic Testing of RAG Systems with Mutations” has been accepted for publication in <a href="https://conf.researchr.org/home/ase-2026" target="_blank" rel="noopener noreferrer">ASE 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2026-04-16">
+        <span>Apr</span>
+        2026
+      </time>
+      <div>
+<p>Our paper “Testing Retrieval-Augmented Generation Systems with Chunk Coverage” has been accepted for publication in <a href="https://conf.researchr.org/home/issta-2026" target="_blank" rel="noopener noreferrer">ISSTA 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2026-04-12">
+        <span>Apr</span>
+        2026
+      </time>
+      <div>
+<p>I joined the organizing committee for <a href="https://conf.researchr.org/home/icst-2027" target="_blank" rel="noopener noreferrer">ICST 2027</a> as a Posters Track Co-chair.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2026-02-05">
+        <span>Feb</span>
+        2026
+      </time>
+      <div>
+<p>I joined the PC of <a href="https://conf.researchr.org/home/icse-2027" target="_blank" rel="noopener noreferrer">ICSE 2027</a> and <a href="https://conf.researchr.org/home/icst-2026/mutation-2026" target="_blank" rel="noopener noreferrer">Mutation 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2026-01-22">
+        <span>Jan</span>
+        2026
+      </time>
+      <div>
+<p>I joined the organizing committee for <a href="https://conf.researchr.org/home/ssbse-2026" target="_blank" rel="noopener noreferrer">SSBSE 2026</a> as a Publicity Co-chair.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2026-01-14">
+        <span>Jan</span>
+        2026
+      </time>
+      <div>
+<p>I joined the PC of <a href="https://conf.researchr.org/home/ase-2026" target="_blank" rel="noopener noreferrer">ASE 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-10-18">
+        <span>Oct</span>
+        2025
+      </time>
+      <div>
+<p>Our paper “Revisiting “Revisiting Neuron Coverage for DNN Testing: A Layer-Wise and Distribution-Aware Criterion”: A Critical Review and Implications on DNN Coverage Testing” has been accepted for publication in <a href="https://conf.researchr.org/home/icse-2026" target="_blank" rel="noopener noreferrer">ICSE 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-09-15">
+        <span>Sep</span>
+        2025
+      </time>
+      <div>
+<p>The paper “A Taxonomy of System-Level Attacks on Deep Learning Models in Autonomous Vehicles” has been accepted for publication in <a href="https://dl.acm.org/journal/tosem" target="_blank" rel="noopener noreferrer">TOSEM</a>. This is the second paper of mine with my PhD student, <a href="https://search.usi.ch/en/people/eaac7118aec66918d71a30602cfc7ce5/jamshidiyantehrani-masoud" target="_blank" rel="noopener noreferrer">Masoud Jamshidiyan Tehrani</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-09-15">
+        <span>Sep</span>
+        2025
+      </time>
+      <div>
+<p>Our paper, “Evaluating and Improving the Robustness of Security Attack Detectors Generated by LLMs” has been accepted for publication in <a href="https://link.springer.com/journal/10664" target="_blank" rel="noopener noreferrer">Empirical Software Engineering</a>. This marks the first paper from my PhD student, <a href="https://pasinisamuele.github.io/" target="_blank" rel="noopener noreferrer">Samuele Pasini</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-09-14">
+        <span>Sep</span>
+        2025
+      </time>
+      <div>
+<p>I serve as a co-chair of the Testing Tools and Data Showcase Track at <a href="https://conf.researchr.org/home/icst-2026" target="_blank" rel="noopener noreferrer">ICST 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-07-01">
+        <span>Jul</span>
+        2025
+      </time>
+      <div>
+<p>I am organising <a href="https://search-based-and-fuzz-testing.github.io/sbft26/" target="_blank" rel="noopener noreferrer">SBFT 2026</a> and <a href="https://conf.researchr.org/home/icse-2026/deeptest-2026" target="_blank" rel="noopener noreferrer">DeepTest 2026</a>, both of which will be co-located with <a href="https://conf.researchr.org/home/icse-2026" target="_blank" rel="noopener noreferrer">ICSE 2026</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-04-15">
+        <span>Apr</span>
+        2025
+      </time>
+      <div>
+<p>The paper “An Empirical Study of Fault Localisation Techniques for Deep Neural Networks” has been accepted for publication in <a href="https://link.springer.com/journal/10664" target="_blank" rel="noopener noreferrer">Empirical Software Engineering</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-03-15">
+        <span>Mar</span>
+        2025
+      </time>
+      <div>
+<p>The paper “PCLA: A Framework for Testing Autonomous Agents in the CARLA Simulator” has been accepted for <a href="https://conf.researchr.org/home/fse-2025" target="_blank" rel="noopener noreferrer">FSE 2025</a> (Demonstrations Track).</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2025-02-01">
+        <span>Feb</span>
+        2025
+      </time>
+      <div>
+<p>I joined the program committee of <a href="https://conf.researchr.org/home/ase-2025" target="_blank" rel="noopener noreferrer">ASE 2025</a> (NIER Track, Student Research Competition Track) and <a href="https://demessai.github.io/" target="_blank" rel="noopener noreferrer">DeMeSSAI 2025</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2024-09-01">
+        <span>Sep</span>
+        2024
+      </time>
+      <div>
+<p>I joined the program committee of <a href="https://sbft25.github.io/" target="_blank" rel="noopener noreferrer">SBFT 2025</a> and <a href="https://conf.researchr.org/home/icst-2025/mutation-2025" target="_blank" rel="noopener noreferrer">Mutation 2025</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2024-08-01">
+        <span>Aug</span>
+        2024
+      </time>
+      <div>
+<p>I am organising <a href="https://conf.researchr.org/home/icse-2025/deeptest-2025" target="_blank" rel="noopener noreferrer">DeepTest 2025</a>, co-located with ICSE 2025.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2024-04-15">
+        <span>Apr</span>
+        2024
+      </time>
+      <div>
+<p>I joined the program committee of <a href="https://conf.researchr.org/home/ase-2024" target="_blank" rel="noopener noreferrer">ASE 2024</a> (Demonstrations Track, NIER Track).</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2024-04-10">
+        <span>Apr</span>
+        2024
+      </time>
+      <div>
+<p>I joined the program committee of <a href="https://conf.researchr.org/home/issta-2025" target="_blank" rel="noopener noreferrer">ISSTA 2025</a> (Research Track).</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2024-04-05">
+        <span>Apr</span>
+        2024
+      </time>
+      <div>
+<p>I joined the <a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board" target="_blank" rel="noopener noreferrer">TOSEM Board of Distinguished Reviewers</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2023-09-01">
+        <span>Sep</span>
+        2023
+      </time>
+      <div>
+<p>I’m thrilled to share that I’m beginning a postdoc at USI Lugano under the guidance of <a href="https://www.inf.usi.ch/faculty/tonella/#/" target="_blank" rel="noopener noreferrer">Prof. Paolo Tonella</a>!</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2023-04-01">
+        <span>Apr</span>
+        2023
+      </time>
+      <div>
+<p>Our paper wins a best paper award at <a href="https://mutation-workshop.github.io/2023/" target="_blank" rel="noopener noreferrer">Mutation 2023</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2022-12-15">
+        <span>Dec</span>
+        2022
+      </time>
+      <div>
+<p>In collaboration with TAU Lab, our paper “Repairing DNN Architecture: Are We There Yet?” has been accepted to publication at <a href="https://conf.researchr.org/home/icst-2023" target="_blank" rel="noopener noreferrer">ICST 2023 (Research Papers Track)</a>.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2022-12-01">
+        <span>Dec</span>
+        2022
+      </time>
+      <div>
+<p>I’m delighted to announce that I have successfully defended my Ph.D. thesis!</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2022-08-01">
+        <span>Aug</span>
+        2022
+      </time>
+      <div>
+<p>I’ll visit <a href="https://www.inf.usi.ch/faculty/tonella" target="_blank" rel="noopener noreferrer">Prof. Paolo Tonella</a> at Università della Svizzera italiana (USI) for two months.</p>
+</div>
+    </article>
+
+    <article class="news-item">
+      <time datetime="2022-07-01">
+        <span>Jul</span>
+        2022
+      </time>
+      <div>
+<p>I successfully completed my dissertation proposal.</p>
+</div>
+    </article>
+
+  </div>
+
+  <button class="news-toggle" id="news-toggle" type="button" aria-expanded="false" aria-controls="news-list">
+    <span>Show all news</span>
+    <svg aria-hidden="true" viewbox="0 0 20 20">
+      <path d="m5 8 5 5 5-5"></path>
+    </svg>
+  </button>
+</section>
+
+          <section class="content-section selected-section" id="selected-work" aria-labelledby="selected-title">
+  <header class="content-section-header section-header-row">
+    <div>
+      <p class="section-label"><span aria-hidden="true"></span>Recent work</p>
+      <h2 id="selected-title">Latest publications</h2>
+    </div>
+    <a class="section-link" href="/publications/">View all</a>
+  </header>
+
+  <div class="featured-list">
+    <ol class="bibliography">
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/ase-2026" target="_blank" rel="noopener noopener noreferrer">
+      ASE · 2026
+    </a>
+
+    <h4 class="publication-name">When Knowledge Changes: Metamorphic Testing of RAG Systems with Mutations</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, S. Pasini and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/kim2026when.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/issta-2026" target="_blank" rel="noopener noopener noreferrer">
+      ISSTA · 2026
+    </a>
+
+    <h4 class="publication-name">Testing Retrieval-Augmented Generation Systems with Chunk Coverage</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, S. Pasini and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of the 35th ACM International Symposium on Software Testing and Analysis</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/kim2026testing.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/icse-2026" target="_blank" rel="noopener noopener noreferrer">
+      ICSE · 2026
+    </a>
+
+    <h4 class="publication-name">Revisiting "Revisiting Neuron Coverage for DNN Testing: A Layer-Wise and Distribution-Aware Criterion": A Critical Review and Implications on DNN Coverage Testing</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, N. Humbatova, G. Jahangirova, S. Yoo and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of the 48th IEEE/ACM International Conference on Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2026revisiting.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+</ol>
+  </div>
+</section>
+
+          <footer class="site-footer">
+  <div>
+    <p class="footer-name">Jinhan Kim</p>
+    <p>Software testing, reliability &amp; AI assurance</p>
+  </div>
+  <div class="footer-links" aria-label="Footer links">
+    <a href="mailto:jinhan.kim@usi.ch">Email</a>
+    <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">Scholar</a>
+    <a href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">CV</a>
+  </div>
+  <p>Last updated August 2026</p>
+</footer>
+
+        </div>
+        <div class="view-panel" data-panel="publications" hidden>
+          <section class="content-section publications-section inner-page-section" id="publications" aria-labelledby="publications-title">
+  <header class="content-section-header">
+    <p class="section-label">
+      <span aria-hidden="true"></span>Research output
+    </p>
+    <h2 id="publications-title">Publications</h2>
+  </header>
+
+  <div class="bibliography-body" markdown="1">
+<p class="publications-intro">
+  For an up-to-date list of publications and citation counts, visit my
+  <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">Google Scholar profile</a>.
+  Unless otherwise specified, publications appeared in the main research track.
+</p>
+
+
+<section class="publication-group" aria-labelledby="journal-publications-title">
+  <h3 class="bibliography-heading" id="journal-publications-title" style="counter-reset:bibitem 8">
+    <span>Journals</span>
+    <span class="publication-count">7 papers</span>
+  </h3>
+  <div class="publication-list" id="journal-publications">
+    <ol class="bibliography">
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://www.sciencedirect.com/journal/journal-of-systems-and-software" target="_blank" rel="noopener noopener noreferrer">
+      JSS · 2026
+    </a>
+
+    <h4 class="publication-name">Cross-Site Scripting Adversarial Attacks Based on Deep Reinforcement Learning: Evaluation and Extension Study</h4>
+
+    <p class="publication-authors">S. Pasini, G. Maragliano, <strong>J. Kim</strong> and P. Tonella</p>
+
+
+      <p class="publication-venue">Journal of Systems and Software</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/pasini2026xss.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://dl.acm.org/journal/tosem" target="_blank" rel="noopener noopener noreferrer">
+      TOSEM · 2025
+    </a>
+
+    <h4 class="publication-name">A Taxonomy of System-Level Attacks on Deep Learning Models in Autonomous Vehicles</h4>
+
+    <p class="publication-authors">M. J. Tehrani, <strong>J. Kim</strong>, R. Z. Foulefack, A. Marchetto and P. Tonella</p>
+
+
+      <p class="publication-venue">ACM Transactions on Software Engineering and Methodology</p>
+
+
+
+    <p class="publication-note"><span aria-hidden="true">✦</span> Presented at the journal-first track of ICSE 2026</p>
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/tehrani2025taxonomy.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://link.springer.com/journal/10664" target="_blank" rel="noopener noopener noreferrer">
+      EMSE · 2025
+    </a>
+
+    <h4 class="publication-name">Evaluating and Improving the Robustness of Security Attack Detectors Generated by LLMs</h4>
+
+    <p class="publication-authors">S. Pasini, <strong>J. Kim</strong>, T. Aiello, R. Lozoya, A. Sabetta and P. Tonella</p>
+
+
+      <p class="publication-venue">Empirical Software Engineering</p>
+
+
+
+    <p class="publication-note"><span aria-hidden="true">✦</span> Presented at the journal-first track of ICSE 2026</p>
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/pasini2025evaluating.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://link.springer.com/journal/10664" target="_blank" rel="noopener noopener noreferrer">
+      EMSE · 2025
+    </a>
+
+    <h4 class="publication-name">An Empirical Study of Fault Localisation Techniques for Deep Neural Networks</h4>
+
+    <p class="publication-authors">N. Humbatova, <strong>J. Kim</strong>, G. Jahangirova, S. Yoo and P. Tonella</p>
+
+
+      <p class="publication-venue">Empirical Software Engineering</p>
+
+
+
+    <p class="publication-note"><span aria-hidden="true">✦</span> Presented at the journal-first track of ICST 2026</p>
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Humbatova2025a.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://www.sciencedirect.com/journal/information-and-software-technology" target="_blank" rel="noopener noopener noreferrer">
+      IST · 2023
+    </a>
+
+    <h4 class="publication-name">Learning Test-Mutant Relationship for Accurate Fault Localisation</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, G. An, R. Feldt and S. Yoo</p>
+
+
+      <p class="publication-venue">Information and Software Technology</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2023qa1.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://dl.acm.org/journal/tosem" target="_blank" rel="noopener noopener noreferrer">
+      TOSEM · 2023
+    </a>
+
+    <h4 class="publication-name">Evaluating Surprise Adequacy for Deep Learning System Testing</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, R. Feldt and S. Yoo</p>
+
+
+      <p class="publication-venue">ACM Transactions on Software Engineering and Methodology</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2023ab.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://dl.acm.org/journal/tosem" target="_blank" rel="noopener noopener noreferrer">
+      TOSEM · 2022
+    </a>
+
+    <h4 class="publication-name">Predictive Mutation Analysis via Natural Language Channel in Source Code</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, J. Jeon, S. Hong and S. Yoo</p>
+
+
+      <p class="publication-venue">ACM Transactions on Software Engineering and Methodology</p>
+
+
+
+    <p class="publication-note"><span aria-hidden="true">✦</span> Presented at the journal-first track of ICSE 2023</p>
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2022ax.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+</ol>
+  </div>
+</section>
+
+
+<section class="publication-group" aria-labelledby="conference-publications-title">
+  <h3 class="bibliography-heading" id="conference-publications-title" style="counter-reset:bibitem 17">
+    <span>Conferences &amp; workshops</span>
+    <span class="publication-count">16 papers</span>
+  </h3>
+  <div class="publication-list" id="conference-publications">
+    <ol class="bibliography">
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/ase-2026" target="_blank" rel="noopener noopener noreferrer">
+      ASE · 2026
+    </a>
+
+    <h4 class="publication-name">When Knowledge Changes: Metamorphic Testing of RAG Systems with Mutations</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, S. Pasini and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/kim2026when.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/issta-2026" target="_blank" rel="noopener noopener noreferrer">
+      ISSTA · 2026
+    </a>
+
+    <h4 class="publication-name">Testing Retrieval-Augmented Generation Systems with Chunk Coverage</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, S. Pasini and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of the 35th ACM International Symposium on Software Testing and Analysis</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/kim2026testing.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/icse-2026" target="_blank" rel="noopener noopener noreferrer">
+      ICSE · 2026
+    </a>
+
+    <h4 class="publication-name">Revisiting "Revisiting Neuron Coverage for DNN Testing: A Layer-Wise and Distribution-Aware Criterion": A Critical Review and Implications on DNN Coverage Testing</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, N. Humbatova, G. Jahangirova, S. Yoo and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of the 48th IEEE/ACM International Conference on Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2026revisiting.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/fse-2025" target="_blank" rel="noopener noopener noreferrer">
+      FSE Demo · 2025
+    </a>
+
+    <h4 class="publication-name">PCLA: A Framework for Testing Autonomous Agents in the CARLA Simulator</h4>
+
+    <p class="publication-authors">M. Tehrani, <strong>J. Kim</strong> and P. Tonella</p>
+
+
+      <p class="publication-venue">Proceedings of ACM on the Foundations of Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Tehrani2025a.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://mutation-workshop.github.io/2023/" target="_blank" rel="noopener noopener noreferrer">
+      Mutation · 2023
+    </a>
+
+    <h4 class="publication-name">The Inversive Relationship Between Bugs and Patches: An Empirical Study</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, J. Park and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 18th International Workshop on Mutation Analysis</p>
+
+
+
+    <p class="publication-note"><span aria-hidden="true">✦</span> Best Paper Award</p>
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2023pa.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://conf.researchr.org/home/icst-2023" target="_blank" rel="noopener noopener noreferrer">
+      ICST · 2023
+    </a>
+
+    <h4 class="publication-name">Repairing DNN Architecture: Are We There Yet?</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, N. Humbatova, G. Jahangirova, P. Tonella and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 16th IEEE International Conference on Software Testing, Verification and Validation</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2022ak.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://icst2022.vrain.upv.es/" target="_blank" rel="noopener noopener noreferrer">
+      ICST Industry · 2022
+    </a>
+
+    <h4 class="publication-name">Repairing Fragile GUI Test Cases Using Word and Layout Embedding</h4>
+
+    <p class="publication-authors">J. Yoon, S. Chung, K. Shin, <strong>J. Kim</strong>, S. Hong and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 15th IEEE International Conference on Software Testing, Verification and Validation</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Yoon2022fs.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="http://2021.issre.net/" target="_blank" rel="noopener noopener noreferrer">
+      ISSRE · 2021
+    </a>
+
+    <h4 class="publication-name">Ahead of Time Mutation Based Fault Localisation Using Statistical Inference</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, G. An, R. Feldt and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 32nd International Symposium on Software Reliability Engineering</p>
+
+
+
+    <p class="publication-note"><span aria-hidden="true">✦</span> Invited for a special issue of IST Journal</p>
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2021xv.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://2020.esec-fse.org/" target="_blank" rel="noopener noopener noreferrer">
+      FSE Industry · 2020
+    </a>
+
+    <h4 class="publication-name">Reducing DNN Labelling Cost Using Surprise Adequacy: An Industrial Case Study for Autonomous Driving</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, J. Ju, R. Feldt and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2020zg.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://2019.icse-conferences.org/" target="_blank" rel="noopener noopener noreferrer">
+      ICSE · 2019
+    </a>
+
+    <h4 class="publication-name">Guiding Deep Learning System Testing Using Surprise Adequacy</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, R. Feldt and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 41st IEEE/ACM International Conference on Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2019aa.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="http://ssbse18.irisa.fr/" target="_blank" rel="noopener noopener noreferrer">
+      SSBSE · 2018
+    </a>
+
+    <h4 class="publication-name">Learning Without Peeking: Secure Multi-Party Computation Genetic Programming</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, M. G. Epitropakis and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 10th International Symposium on Search Based Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2018aa.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://learningatscale.acm.org/las2018/" target="_blank" rel="noopener noopener noreferrer">
+      L@S · 2018
+    </a>
+
+    <h4 class="publication-name">Elicast: Embedding Interactive Exercises in Instructional Programming Screencasts</h4>
+
+    <p class="publication-authors">J. Park, Y. H. Park, <strong>J. Kim</strong>, J. Cha, S. Kim and A. Oh</p>
+
+
+      <p class="publication-venue">Proceedings of the Fifth Annual ACM Conference on Learning at Scale</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/park2018elicast.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://web.archive.org/web/20180905090058/http://geneticimprovementofsoftware.com:80/" target="_blank" rel="noopener noopener noreferrer">
+      GI · 2018
+    </a>
+
+    <h4 class="publication-name">Comparing Line and AST Granularity Level for Program Repair Using PyGGI</h4>
+
+    <p class="publication-authors">G. An, <strong>J. Kim</strong> and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 4th Genetic Improvement Workshop</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/An2018to.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <p class="venue-badge">KCSE · 2017</p>
+
+    <h4 class="publication-name">PyGGI: Python General framework for Genetic Improvement</h4>
+
+    <p class="publication-authors">G. An, <strong>J. Kim</strong>, S. Lee and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of Korea Software Congress</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="http://ssbse17.github.io/" target="_blank" rel="noopener noopener noreferrer">
+      SSBSE Short Papers · 2017
+    </a>
+
+    <h4 class="publication-name">GPGPGPU: Evaluation of Parallelisation of Genetic Programming Using GPGPU</h4>
+
+    <p class="publication-authors"><strong>J. Kim</strong>, J. Kim and S. Yoo</p>
+
+
+      <p class="publication-venue">Proceedings of the 9th International Symposium on Search Based Software Engineering</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/Kim2017ew.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+<li>
+<article class="bib-entry">
+  <div class="publication-main">
+
+    <a class="venue-badge" href="https://chi2016.acm.org/wp/" target="_blank" rel="noopener noopener noreferrer">
+      CHI · 2016
+    </a>
+
+    <h4 class="publication-name">BeUpright: Posture Correction Using Relational Norm Intervention</h4>
+
+    <p class="publication-authors">J. Shin, B. Kang, T. Park, J. Huh, <strong>J. Kim</strong> and J. Song</p>
+
+
+      <p class="publication-venue">Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems</p>
+
+
+
+  </div>
+
+  <div class="publication-actions">
+
+    <a class="publication-link" href="/assets/files/papers/shin2016beupright.pdf" target="_blank" rel="noopener">
+      PDF
+      <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+    </a>
+
+  </div>
+</article>
+</li>
+</ol>
+  </div>
+</section>
+
+<section class="publication-group publication-thesis-group" aria-labelledby="thesis-title">
+<h3 class="bibliography-heading" id="thesis-title" style="counter-reset:bibitem 2">
+  <span>Thesis</span>
+  <span class="publication-count">1 dissertation</span>
+</h3>
+<div class="publication-list">
+<ol class="bibliography">
+  <li>
+    <article class="bib-entry">
+      <div class="publication-main">
+        <p class="venue-badge">Ph.D. · 2023</p>
+        <h4 class="publication-name">Exploiting Mutant’s Relationship with Code, Faults, and Patches for Higher Efficacy of Mutation Analysis</h4>
+        <p class="publication-authors"><strong>J. Kim</strong></p>
+        <p class="publication-venue">KAIST, February 2023</p>
+      </div>
+      <div class="publication-actions">
+        <a class="publication-link" href="/assets/files/papers/thesis.pdf" target="_blank" rel="noopener">
+          PDF
+          <svg aria-hidden="true" viewbox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"></path></svg>
+        </a>
+      </div>
+    </article>
+  </li>
+</ol>
+</div>
+</section>
+  </div>
+</section>
+
+          <footer class="site-footer">
+  <div>
+    <p class="footer-name">Jinhan Kim</p>
+    <p>Software testing, reliability &amp; AI assurance</p>
+  </div>
+  <div class="footer-links" aria-label="Footer links">
+    <a href="mailto:jinhan.kim@usi.ch">Email</a>
+    <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">Scholar</a>
+    <a href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">CV</a>
+  </div>
+  <p>Last updated August 2026</p>
+</footer>
+
+        </div>
+        <div class="view-panel is-active" data-panel="service">
+          <section class="content-section service-section" id="service" aria-labelledby="service-title">
   <header class="content-section-header">
     <p class="section-label">
       <span aria-hidden="true"></span>Organizing &amp; reviewing
@@ -343,20 +1503,20 @@
   </div>
 </section>
 
+          <footer class="site-footer">
+  <div>
+    <p class="footer-name">Jinhan Kim</p>
+    <p>Software testing, reliability &amp; AI assurance</p>
+  </div>
+  <div class="footer-links" aria-label="Footer links">
+    <a href="mailto:jinhan.kim@usi.ch">Email</a>
+    <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">Scholar</a>
+    <a href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">CV</a>
+  </div>
+  <p>Last updated August 2026</p>
+</footer>
 
-
-        <footer class="site-footer">
-          <div>
-            <p class="footer-name">Jinhan Kim</p>
-            <p>Software testing, reliability &amp; AI assurance</p>
-          </div>
-          <div class="footer-links" aria-label="Footer links">
-            <a href="mailto:jinhan.kim@usi.ch">Email</a>
-            <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener noopener noreferrer">Scholar</a>
-            <a href="/assets/files/Jinhan_s_cv.pdf" target="_blank" rel="noopener">CV</a>
-          </div>
-          <p>Last updated August 2026</p>
-        </footer>
+        </div>
       </main>
     </div>
   </body>

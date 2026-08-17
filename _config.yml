@@ -2,6 +2,20 @@ url: "https://jinhan.me" # the base hostname & protocol for your site, e.g. http
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Jinhan Kim | Software Engineering" # the name of your site, e.g. ACME Corp.
 
+exclude:
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
+  - kotori-beige
+  - liquid-glass-experiment
+
 # Collections
 collections:
   news:
