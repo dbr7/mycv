@@ -239,15 +239,15 @@ html[data-theme="dark"] .glass::before {
 .profile-sticky {
   display: grid;
   min-height: 0;
-  grid-template-columns: 112px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
-    "portrait name"
-    "portrait tagline"
-    "contact contact"
-    "affiliation affiliation"
-    "dock dock";
+    "portrait"
+    "name"
+    "tagline"
+    "contact"
+    "affiliation"
+    "dock";
   align-items: start;
-  column-gap: 18px;
 }
 
 .profile-portrait {
@@ -275,8 +275,8 @@ html[data-theme="dark"] .glass::before {
 }
 
 .profile-name {
-  align-self: end;
-  margin: 0;
+  align-self: start;
+  margin: 18px 0 0;
   grid-area: name;
   font-size: 1.95rem;
   font-weight: 760;
@@ -290,7 +290,7 @@ html[data-theme="dark"] .glass::before {
 
 .profile-tagline {
   max-width: none;
-  margin: 9px 0 0;
+  margin: 7px 0 0;
   grid-area: tagline;
   color: var(--ink-muted);
   font-size: 0.96rem;
@@ -357,6 +357,7 @@ html[data-theme="dark"] .glass::before {
 .profile-nav {
   position: relative;
   display: grid;
+  margin: 0 -4px;
   padding: 4px;
   gap: 2px;
 }
@@ -382,9 +383,9 @@ html[data-theme="dark"] .glass::before {
   z-index: 1;
   display: grid;
   min-height: 48px;
-  padding: 0 14px;
+  padding: 0 14px 0 15px;
   align-items: center;
-  grid-template-columns: 40px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 14px;
   border-radius: 16px;
   color: var(--ink-muted);
   font-size: 0.88rem;
@@ -399,10 +400,18 @@ html[data-theme="dark"] .glass::before {
 }
 
 .nav-index {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
   color: var(--ink-soft);
   font-size: 0.66rem;
   font-variant-numeric: tabular-nums;
   font-weight: 650;
+}
+
+.profile-nav a > span:last-child {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .nav-icon {
@@ -1264,6 +1273,16 @@ html[data-theme="dark"] .venue-badge {
   outline-offset: 3px;
 }
 
+@media (min-width: 901px) {
+  .profile-sticky {
+    padding: 0 15px;
+  }
+
+  .profile-dock {
+    margin: 0 -15px;
+  }
+}
+
 @media (min-width: 901px) and (max-height: 575px) {
   .profile-panel {
     position: relative;
@@ -1291,15 +1310,16 @@ html[data-theme="dark"] .venue-badge {
   .profile-sticky {
     display: grid;
     min-height: 0;
-    grid-template-columns: 104px minmax(0, 1fr);
+    padding: 0 15px;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      "portrait name"
-      "portrait tagline"
-      "contact contact"
-      "affiliation affiliation"
-      "dock dock";
+      "portrait"
+      "name"
+      "tagline"
+      "contact"
+      "affiliation"
+      "dock";
     align-items: start;
-    column-gap: 17px;
   }
 
   .profile-portrait {
@@ -1313,14 +1333,15 @@ html[data-theme="dark"] .venue-badge {
   }
 
   .profile-name {
-    align-self: end;
+    align-self: start;
+    margin-top: 17px;
     grid-area: name;
     font-size: 1.82rem;
   }
 
   .profile-tagline {
     max-width: none;
-    margin: 5px 0 8px;
+    margin: 6px 0 0;
     grid-area: tagline;
   }
 
@@ -1344,7 +1365,7 @@ html[data-theme="dark"] .venue-badge {
   }
 
   .profile-dock {
-    margin: 0;
+    margin: 0 -15px;
     padding: 0;
     grid-area: dock;
   }
@@ -1362,6 +1383,7 @@ html[data-theme="dark"] .venue-badge {
     left: 14px;
     display: grid;
     height: 70px;
+    margin: 0;
     padding: 7px 59px 7px 7px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
@@ -1468,8 +1490,8 @@ html[data-theme="dark"] .venue-badge {
   }
 
   .profile-sticky {
-    grid-template-columns: 88px minmax(0, 1fr);
-    column-gap: 17px;
+    padding: 0 11px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .profile-portrait {
@@ -1481,11 +1503,12 @@ html[data-theme="dark"] .venue-badge {
   }
 
   .profile-name {
+    margin-top: 15px;
     font-size: 1.58rem;
   }
 
   .profile-tagline {
-    margin: 7px 0 10px;
+    margin: 6px 0 0;
     font-size: 0.85rem;
     line-height: 1.5;
   }
@@ -1511,6 +1534,10 @@ html[data-theme="dark"] .venue-badge {
   .profile-actions {
     margin-top: 18px;
     gap: 7px;
+  }
+
+  .profile-dock {
+    margin: 0 -11px;
   }
 
   .action-button {
