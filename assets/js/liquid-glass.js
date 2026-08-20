@@ -261,7 +261,19 @@
     });
   };
 
-  const revealPanel = (view, immediate = false) => {
+  const scrollToPanelStart = (panel) => {
+    if (window.innerWidth > 900 || panel.dataset.panel === "about") {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
+
+    const firstSection = panel.querySelector(".content-section");
+    const target = firstSection || contentStage;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - 16;
+    window.scrollTo({ top: Math.max(0, targetTop), behavior: "auto" });
+  };
+
+  const revealPanel = (view, immediate = false, resetScroll = true) => {
     const nextPanel = panels.find((panel) => panel.dataset.panel === view);
     const currentPanel = panels.find((panel) => !panel.hidden);
     if (!nextPanel) return;
@@ -271,6 +283,7 @@
 
     if (immediate || nextPanel === currentPanel || reduceMotion.matches) {
       setPanelVisibility(nextPanel);
+      if (resetScroll) scrollToPanelStart(nextPanel);
       requestAnimationFrame(() => placeNavSelection(true));
       return;
     }
@@ -278,7 +291,7 @@
     const showNext = () => {
       if (version !== transitionVersion) return;
       setPanelVisibility(nextPanel);
-      window.scrollTo({ top: 0, behavior: "auto" });
+      if (resetScroll) scrollToPanelStart(nextPanel);
       requestAnimationFrame(() => placeNavSelection(true));
 
       if (gsapAvailable()) {
@@ -322,9 +335,8 @@
         ? "Jinhan Kim | Software Engineering"
         : `${view === "service" ? "Community service" : "Publications"} | Jinhan Kim`;
     updateNavigation(immediate);
-    revealPanel(view, immediate);
+    revealPanel(view, immediate, resetScroll);
 
-    if (resetScroll && immediate) window.scrollTo({ top: 0, behavior: "auto" });
     if (updateHash) {
       window.history.replaceState(null, "", `${siteRoot}#${view}`);
     }
