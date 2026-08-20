@@ -37,6 +37,7 @@
   let navAnchor = null;
   let dockIsCompact = false;
   let lastScrollY = window.scrollY;
+  let refreshPublicationIndex = () => {};
 
   const gsapAvailable = () => Boolean(window.gsap);
 
@@ -234,6 +235,151 @@
     });
   };
 
+  const setupPublicationIndex = (scope) => {
+    const index = scope?.querySelector("[data-publication-index]");
+    const selection = index?.querySelector(".publication-index-selection");
+    const buttons = Array.from(
+      index?.querySelectorAll("[data-publication-target]") || [],
+    );
+    if (!index || !selection || buttons.length === 0) return;
+
+    const entries = buttons
+      .map((button) => {
+        const heading = document.getElementById(button.dataset.publicationTarget);
+        return {
+          button,
+          section: heading?.closest(".publication-group") || heading,
+        };
+      })
+      .filter((entry) => entry.section);
+    if (entries.length === 0) return;
+
+    let activeButton =
+      buttons.find((button) => button.classList.contains("is-current")) ||
+      buttons[0];
+    let navigationLocked = false;
+    let navigationTimer;
+    let indexScrollFrame;
+
+    const placeSelection = (button, immediate = false) => {
+      if (!button || scope.hidden) return;
+      const indexRect = index.getBoundingClientRect();
+      const buttonRect = button.getBoundingClientRect();
+      if (!indexRect.width || !buttonRect.width) return;
+
+      const x = buttonRect.left - indexRect.left - selection.offsetLeft;
+      const y = buttonRect.top - indexRect.top - selection.offsetTop;
+
+      if (gsapAvailable() && !reduceMotion.matches) {
+        window.gsap.killTweensOf(selection);
+        if (immediate) {
+          window.gsap.set(selection, {
+            x,
+            y,
+            width: buttonRect.width,
+            height: buttonRect.height,
+            scaleX: 1,
+          });
+          return;
+        }
+
+        window.gsap
+          .timeline()
+          .to(selection, {
+            scaleX: 1.035,
+            duration: 0.12,
+            ease: "power2.out",
+          })
+          .to(
+            selection,
+            {
+              x,
+              y,
+              width: buttonRect.width,
+              height: buttonRect.height,
+              scaleX: 1,
+              duration: 0.42,
+              ease: "power3.out",
+            },
+            "-=0.04",
+          );
+        return;
+      }
+
+      selection.style.width = `${buttonRect.width}px`;
+      selection.style.height = `${buttonRect.height}px`;
+      selection.style.transform = `translate(${x}px, ${y}px)`;
+    };
+
+    const setActiveButton = (button, immediate = false) => {
+      if (!button) return;
+      const changed = activeButton !== button;
+      activeButton = button;
+      buttons.forEach((item) => {
+        const current = item === button;
+        item.classList.toggle("is-current", current);
+        if (current) item.setAttribute("aria-current", "true");
+        else item.removeAttribute("aria-current");
+      });
+      if (changed || immediate) placeSelection(button, immediate);
+    };
+
+    const updateFromScroll = (immediate = false) => {
+      if (scope.hidden || navigationLocked) return;
+      const activationLine = index.getBoundingClientRect().bottom + 22;
+      let nextEntry = entries[0];
+
+      entries.forEach((entry) => {
+        if (entry.section.getBoundingClientRect().top <= activationLine) {
+          nextEntry = entry;
+        }
+      });
+      setActiveButton(nextEntry.button, immediate);
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const entry = entries.find((item) => item.button === button);
+        if (!entry) return;
+
+        navigationLocked = true;
+        setActiveButton(button);
+        const stickyTop = Number.parseFloat(window.getComputedStyle(index).top) || 0;
+        const offset = index.offsetHeight + stickyTop + 18;
+        const targetTop =
+          entry.section.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: reduceMotion.matches ? "auto" : "smooth",
+        });
+
+        window.clearTimeout(navigationTimer);
+        navigationTimer = window.setTimeout(() => {
+          navigationLocked = false;
+          updateFromScroll();
+        }, reduceMotion.matches ? 0 : 850);
+      });
+    });
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (indexScrollFrame) return;
+        indexScrollFrame = requestAnimationFrame(() => {
+          updateFromScroll();
+          indexScrollFrame = null;
+        });
+      },
+      { passive: true },
+    );
+
+    refreshPublicationIndex = () => {
+      if (scope.hidden) return;
+      updateFromScroll(true);
+      requestAnimationFrame(() => placeSelection(activeButton, true));
+    };
+  };
+
   const relocateNavigation = () => {
     if (!profileNav || !navAnchor) return;
     const mobile = window.innerWidth <= 900;
@@ -284,7 +430,10 @@
     if (immediate || nextPanel === currentPanel || reduceMotion.matches) {
       setPanelVisibility(nextPanel);
       if (resetScroll) scrollToPanelStart(nextPanel);
-      requestAnimationFrame(() => placeNavSelection(true));
+      requestAnimationFrame(() => {
+        placeNavSelection(true);
+        refreshPublicationIndex();
+      });
       return;
     }
 
@@ -292,7 +441,10 @@
       if (version !== transitionVersion) return;
       setPanelVisibility(nextPanel);
       if (resetScroll) scrollToPanelStart(nextPanel);
-      requestAnimationFrame(() => placeNavSelection(true));
+      requestAnimationFrame(() => {
+        placeNavSelection(true);
+        refreshPublicationIndex();
+      });
 
       if (gsapAvailable()) {
         window.gsap.fromTo(
@@ -347,8 +499,11 @@
     const newsToggle = scope.querySelector("#news-toggle");
     if (!newsList || !newsToggle) return;
     const newsItems = Array.from(newsList.querySelectorAll(".news-item"));
+    const olderNewsContent = Array.from(
+      newsList.querySelectorAll(".news-year-older, .news-item-older"),
+    );
 
-    if (newsItems.length <= 4) {
+    if (newsItems.length <= 5) {
       newsToggle.hidden = true;
       return;
     }
@@ -364,7 +519,7 @@
 
       if (nextExpanded && gsapAvailable() && !reduceMotion.matches) {
         window.gsap.fromTo(
-          newsItems.slice(4),
+          olderNewsContent,
           { autoAlpha: 0, y: 8 },
           {
             autoAlpha: 1,
@@ -502,6 +657,7 @@
       });
     }
     placeNavSelection(true);
+    refreshPublicationIndex();
   });
 
   window.addEventListener("hashchange", () => {
@@ -533,6 +689,9 @@
     relocateNavigation();
 
     setupNews(panels.find((panel) => panel.dataset.panel === "about"));
+    setupPublicationIndex(
+      panels.find((panel) => panel.dataset.panel === "publications"),
+    );
     setupPortrait();
     setupGlassResponse();
     activateView(activeView, {
@@ -541,7 +700,10 @@
       resetScroll: false,
     });
 
-    requestAnimationFrame(() => placeNavSelection(true));
+    requestAnimationFrame(() => {
+      placeNavSelection(true);
+      refreshPublicationIndex();
+    });
 
     if (gsapAvailable() && !reduceMotion.matches) {
       window.gsap.from(profileShell, {

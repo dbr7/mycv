@@ -11,15 +11,55 @@
   </header>
 
   <div class="bibliography-body" markdown="1">
+{% capture numJournalPapers %}
+{% bibliography_count --file my --query @article %}
+{% endcapture %}
+{% capture numConfPapers %}
+{% bibliography_count --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full || keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
+{% endcapture %}
 <p class="publications-intro">
   For an up-to-date list of publications and citation counts, visit my
   <a href="https://scholar.google.com/citations?user=XL_ZwBAAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a>.
   Unless otherwise specified, publications appeared in the main research track.
 </p>
 
-{% capture numJournalPapers %}
-{% bibliography_count --file my --query @article %}
-{% endcapture %}
+<nav
+  class="glass publication-index"
+  aria-label="Publication sections"
+  data-publication-index
+  data-glass
+>
+  <span class="publication-index-selection" aria-hidden="true"></span>
+  <button
+    class="publication-index-item is-current"
+    type="button"
+    data-publication-target="journal-publications-title"
+    aria-current="true"
+    aria-label="Journals, {{ numJournalPapers | strip }} papers"
+  >
+    <span>Journals</span>
+    <span class="publication-index-count" aria-hidden="true">{{ numJournalPapers | strip }}</span>
+  </button>
+  <button
+    class="publication-index-item"
+    type="button"
+    data-publication-target="conference-publications-title"
+    aria-label="Conferences and workshops, {{ numConfPapers | strip }} papers"
+  >
+    <span>Conferences</span>
+    <span class="publication-index-count" aria-hidden="true">{{ numConfPapers | strip }}</span>
+  </button>
+  <button
+    class="publication-index-item"
+    type="button"
+    data-publication-target="thesis-title"
+    aria-label="Thesis, 1 dissertation"
+  >
+    <span>Thesis</span>
+    <span class="publication-index-count" aria-hidden="true">1</span>
+  </button>
+</nav>
+
 <section
   class="publication-group"
   aria-labelledby="journal-publications-title"
@@ -33,9 +73,6 @@
   </div>
 </section>
 
-{% capture numConfPapers %}
-{% bibliography_count --file my --query @inproceedings[keywords ^= conference || keywords ^= workshop_full || keywords ^= workshop_short || keywords ^= domestic || keywords ^= demo] %}
-{% endcapture %}
 <section
   class="publication-group"
   aria-labelledby="conference-publications-title"

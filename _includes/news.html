@@ -10,11 +10,20 @@
 
   <div class="news-list" id="news-list">
     {% assign sorted_news = site.news | sort: 'date' | reverse %}
+    {% assign current_news_year = '' %}
     {% for item in sorted_news %}
-    <article class="news-item">
-      <time datetime="{{ item.date | date: '%Y-%m-%d' }}">
-        <span>{{ item.date | date: "%b" }}</span>
-        {{ item.date | date: "%Y" }}
+    {% assign item_year = item.date | date: '%Y' %}
+    {% if item_year != current_news_year %}
+    <h3 class="news-year{% if forloop.index > 5 %} news-year-older{% endif %}">{{ item_year }}</h3>
+    {% assign current_news_year = item_year %}
+    {% endif %}
+    <article class="news-item{% if forloop.index > 5 %} news-item-older{% endif %}">
+      <time
+        class="news-date"
+        datetime="{{ item.date | date: '%Y-%m-%d' }}"
+        aria-label="{{ item.date | date: '%B %Y' }}"
+      >
+        <span class="news-date-month">{{ item.date | date: "%b" }}</span>
       </time>
       <div>{{ item.content | markdownify }}</div>
     </article>
