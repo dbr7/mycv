@@ -19,7 +19,7 @@
         title="Open PDF"
         aria-label="Open PDF: {{ entry.title | strip_html | escape }}"
       >
-        {{ entry.title }}<span class="publication-title-cue" aria-hidden="true">↗</span>
+        {% include publication-title.html title=entry.title %}
       </a>
       {% else %}
       {{ entry.title }}

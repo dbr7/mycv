@@ -1,0 +1,6 @@
+{%- assign title_words = include.title | split: ' ' -%}
+{%- assign prefix_count = title_words.size | minus: 1 -%}
+{%- if prefix_count > 0 -%}
+  {{- title_words | slice: 0, prefix_count | join: ' ' | append: ' ' -}}
+{%- endif -%}
+<span class="publication-title-ending">{{ title_words | last }}<span class="publication-title-cue" aria-hidden="true">↗</span></span>
