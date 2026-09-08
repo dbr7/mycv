@@ -5,6 +5,7 @@
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const stackedLayout = window.matchMedia("(max-width: 1080px)");
   const profileShell = document.querySelector("#profile-shell");
   const contentStage = document.querySelector("#main-content");
   const themeToggle = document.querySelector("[data-theme-toggle]");
@@ -21,9 +22,9 @@
       '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 21a8 8 0 0 0-16 0"></path><circle cx="10" cy="7" r="4"></circle><path d="M22 21a8 8 0 0 0-5-7.7"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
   };
   // Lucide's geometric Asterisk marks notable publication details. Each copy
-  // gets its own warm-spectrum gradient so the SVG reference stays local.
+  // gets its own two-tone gradient so the SVG reference stays local.
   const publicationNoteIcon = (gradientId) =>
-    `<svg viewBox="5 5 14 14" aria-hidden="true" focusable="false"><defs><linearGradient id="${gradientId}" x1="7" y1="6" x2="17" y2="18" gradientUnits="userSpaceOnUse"><stop class="note-gradient-highlight" offset="0"></stop><stop class="note-gradient-warm" offset="0.34"></stop><stop class="note-gradient-core" offset="0.7"></stop><stop class="note-gradient-edge" offset="1"></stop></linearGradient></defs><g stroke="url(#${gradientId})"><path d="M12 6v12"></path><path d="m17.196 9-10.392 6"></path><path d="m6.804 9 10.392 6"></path></g></svg>`;
+    `<svg viewBox="5 5 14 14" aria-hidden="true" focusable="false"><defs><linearGradient id="${gradientId}" x1="7" y1="6" x2="17" y2="18" gradientUnits="userSpaceOnUse"><stop class="note-gradient-warm" offset="0"></stop><stop class="note-gradient-core" offset="1"></stop></linearGradient></defs><g stroke="url(#${gradientId})"><path d="M12 6v12"></path><path d="m17.196 9-10.392 6"></path><path d="m6.804 9 10.392 6"></path></g></svg>`;
   const requestedView = window.location.hash.slice(1);
   const initialView = document.body.dataset.initialView;
   let activeView = views.includes(requestedView)
@@ -74,12 +75,11 @@
     if (gsapAvailable() && !reduceMotion.matches) {
       window.gsap.fromTo(
         themeToggle,
-        { scale: 0.93, rotate: -4 },
+        { scale: 0.96 },
         {
           scale: 1,
-          rotate: 0,
-          duration: 0.48,
-          ease: "elastic.out(1, 0.62)",
+          duration: 0.24,
+          ease: "power3.out",
           overwrite: true,
         },
       );
@@ -134,8 +134,8 @@
             { scale: 0.975 },
             {
               scale: 1,
-              duration: 0.42,
-              ease: "elastic.out(1, 0.68)",
+              duration: 0.24,
+              ease: "power3.out",
               clearProps: "transform",
             },
           );
@@ -169,31 +169,16 @@
         return;
       }
 
-      const currentX = Number(window.gsap.getProperty(navSelection, "x")) || 0;
-      const currentY = Number(window.gsap.getProperty(navSelection, "y")) || 0;
-      const horizontal = Math.abs(x - currentX) > Math.abs(y - currentY);
-
-      window.gsap
-        .timeline()
-        .to(navSelection, {
-          [horizontal ? "scaleX" : "scaleY"]: 1.035,
-          duration: 0.12,
-          ease: "power2.out",
-        })
-        .to(
-          navSelection,
-          {
-            x,
-            y,
-            width: targetRect.width,
-            height: targetRect.height,
-            scaleX: 1,
-            scaleY: 1,
-            duration: 0.45,
-            ease: "power3.out",
-          },
-          "-=0.05",
-        );
+      window.gsap.to(navSelection, {
+        x,
+        y,
+        width: targetRect.width,
+        height: targetRect.height,
+        scaleX: 1,
+        scaleY: 1,
+        duration: 0.28,
+        ease: "power3.out",
+      });
       return;
     }
 
@@ -283,26 +268,15 @@
           return;
         }
 
-        window.gsap
-          .timeline()
-          .to(selection, {
-            scaleX: 1.035,
-            duration: 0.12,
-            ease: "power2.out",
-          })
-          .to(
-            selection,
-            {
-              x,
-              y,
-              width: buttonRect.width,
-              height: buttonRect.height,
-              scaleX: 1,
-              duration: 0.42,
-              ease: "power3.out",
-            },
-            "-=0.04",
-          );
+        window.gsap.to(selection, {
+          x,
+          y,
+          width: buttonRect.width,
+          height: buttonRect.height,
+          scaleX: 1,
+          duration: 0.28,
+          ease: "power3.out",
+        });
         return;
       }
 
@@ -382,7 +356,7 @@
 
   const relocateNavigation = () => {
     if (!profileNav || !navAnchor) return;
-    const mobile = window.innerWidth <= 900;
+    const mobile = stackedLayout.matches;
 
     if (mobile && profileNav.parentElement !== document.body) {
       document.body.append(profileNav);
@@ -390,7 +364,21 @@
       navAnchor.parentNode.insertBefore(profileNav, navAnchor.nextSibling);
     }
 
+    // Keep the theme switch aligned with the profile on desktop and the dock
+    // on mobile, outside the profile's backdrop-filter containing block.
+    if (mobile && themeToggle.parentElement !== document.body) {
+      document.body.append(themeToggle);
+    } else if (!mobile && themeToggle.parentElement !== profileShell) {
+      profileShell.prepend(themeToggle);
+    }
+
     requestAnimationFrame(() => placeNavSelection(true));
+  };
+
+  const updateProfilePosition = () => {
+    if (!profileShell) return;
+    const fitsViewport = profileShell.offsetHeight + 48 <= window.innerHeight;
+    profileShell.classList.toggle("is-sticky", !stackedLayout.matches && fitsViewport);
   };
 
   const resetPanelStyles = (panel) => {
@@ -408,7 +396,7 @@
   };
 
   const scrollToPanelStart = (panel) => {
-    if (window.innerWidth > 900 || panel.dataset.panel === "about") {
+    if (!stackedLayout.matches || panel.dataset.panel === "about") {
       window.scrollTo({ top: 0, behavior: "auto" });
       return;
     }
@@ -442,18 +430,16 @@
       setPanelVisibility(nextPanel);
       if (resetScroll) scrollToPanelStart(nextPanel);
       requestAnimationFrame(() => {
-        placeNavSelection(true);
         refreshPublicationIndex();
       });
 
       if (gsapAvailable()) {
         window.gsap.fromTo(
           nextPanel,
-          { autoAlpha: 0, scale: 0.988 },
+          { autoAlpha: 0 },
           {
             autoAlpha: 1,
-            scale: 1,
-            duration: 0.5,
+            duration: 0.18,
             ease: "power3.out",
             clearProps: "opacity,visibility,transform",
           },
@@ -465,8 +451,7 @@
       resetPanelStyles(currentPanel);
       window.gsap.to(currentPanel, {
         autoAlpha: 0,
-        scale: 0.991,
-        duration: 0.18,
+        duration: 0.08,
         ease: "power2.in",
         onComplete: showNext,
       });
@@ -561,13 +546,13 @@
       window.gsap.to(link, {
         y: 0,
         scale: 1,
-        duration: 0.34,
+        duration: reduceMotion.matches ? 0 : 0.34,
         ease: "power3.out",
         overwrite: true,
       });
       window.gsap.to(image, {
         scale: 1.015,
-        duration: 0.38,
+        duration: reduceMotion.matches ? 0 : 0.38,
         ease: "power3.out",
         overwrite: true,
       });
@@ -603,22 +588,15 @@
   };
 
   const setDockCompact = (compact) => {
-    if (!profileNav || window.innerWidth > 900 || dockIsCompact === compact) return;
+    if (reduceMotion.matches) compact = false;
+    if (!profileNav || !stackedLayout.matches || dockIsCompact === compact) return;
     dockIsCompact = compact;
 
     if (gsapAvailable() && !reduceMotion.matches) {
-      window.gsap.to(profileNav, {
-        y: compact ? 10 : 0,
-        scale: compact ? 0.95 : 1,
-        autoAlpha: compact ? 0.9 : 1,
-        duration: compact ? 0.3 : 0.43,
-        ease: "power3.out",
-        overwrite: true,
-      });
-      window.gsap.to(themeToggle, {
-        y: compact ? 10 : 0,
-        autoAlpha: compact ? 0.9 : 1,
-        duration: compact ? 0.3 : 0.43,
+      window.gsap.to([profileNav, themeToggle], {
+        y: compact ? 6 : 0,
+        autoAlpha: compact ? 0.96 : 1,
+        duration: 0.24,
         ease: "power3.out",
         overwrite: true,
       });
@@ -650,11 +628,17 @@
 
   window.addEventListener("resize", () => {
     relocateNavigation();
-    if (window.innerWidth > 900 && profileNav && gsapAvailable()) {
+    updateProfilePosition();
+    if (!stackedLayout.matches && profileNav) {
       dockIsCompact = false;
-      window.gsap.set([profileNav, themeToggle], {
-        clearProps: "opacity,visibility,transform",
-      });
+      profileNav.classList.remove("is-compact");
+      themeToggle.classList.remove("is-compact");
+      if (gsapAvailable()) {
+        window.gsap.killTweensOf([profileNav, themeToggle]);
+        window.gsap.set([profileNav, themeToggle], {
+          clearProps: "opacity,visibility,transform",
+        });
+      }
     }
     placeNavSelection(true);
     refreshPublicationIndex();
@@ -687,6 +671,10 @@
     navSelection.setAttribute("aria-hidden", "true");
     profileNav.prepend(navSelection);
     relocateNavigation();
+    updateProfilePosition();
+    if (window.ResizeObserver) {
+      new ResizeObserver(updateProfilePosition).observe(profileShell);
+    }
 
     setupNews(panels.find((panel) => panel.dataset.panel === "about"));
     setupPublicationIndex(
@@ -706,23 +694,12 @@
     });
 
     if (gsapAvailable() && !reduceMotion.matches) {
-      window.gsap.from(profileShell, {
+      window.gsap.from([profileShell, panels.find((panel) => panel.dataset.panel === activeView)], {
         autoAlpha: 0,
-        x: -10,
-        duration: 0.58,
+        duration: 0.24,
         ease: "power3.out",
         clearProps: "opacity,visibility,transform",
       });
-      window.gsap.from(
-        panels.find((panel) => panel.dataset.panel === activeView),
-        {
-          autoAlpha: 0,
-          scale: 0.992,
-          duration: 0.58,
-          ease: "power3.out",
-          clearProps: "opacity,visibility,transform",
-        },
-      );
     }
   };
 

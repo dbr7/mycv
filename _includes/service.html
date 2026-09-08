@@ -24,7 +24,7 @@
           <span class="service-year">{{ year_group.name }}</span>
           <span class="service-year-entries">
             {%- for item in year_group.items %}
-              <span class="service-year-entry">{{ item.content }}</span>{% unless forloop.last %}<span class="service-year-separator">; </span>{% endunless %}
+              <span class="service-year-entry">{{ item.content }}</span>
             {%- endfor %}
           </span>
         </li>
