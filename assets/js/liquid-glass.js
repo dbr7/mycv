@@ -693,6 +693,15 @@
       refreshPublicationIndex();
     });
 
+    // Font swapping can change text widths after the first layout pass.
+    if (document.fonts) {
+      document.fonts.ready.then(() => {
+        updateProfilePosition();
+        placeNavSelection(true);
+        refreshPublicationIndex();
+      });
+    }
+
     if (gsapAvailable() && !reduceMotion.matches) {
       window.gsap.from([profileShell, panels.find((panel) => panel.dataset.panel === activeView)], {
         autoAlpha: 0,
