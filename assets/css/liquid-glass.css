@@ -1493,13 +1493,14 @@ html[data-theme="dark"] .venue-badge {
   margin-bottom: 4px;
   font-size: 0.875rem;
   font-weight: 700;
+  letter-spacing: normal;
   line-height: 1.5;
 }
 
 :is(.publications-section, .selected-section) .publication-authors,
 :is(.publications-section, .selected-section) .publication-venue {
   margin: 0;
-  font-size: 0.78125rem;
+  font-size: 0.8125rem;
   line-height: 1.5;
 }
 
