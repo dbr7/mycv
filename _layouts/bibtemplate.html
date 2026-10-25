@@ -1,6 +1,13 @@
 ---
 ---
-<article class="bib-entry">
+<article
+  class="bib-entry"
+  data-publication-key="{{ entry.key | escape }}"
+  {% if site.data.selected_publications contains entry.key %}data-selected-paper="true"{% endif %}
+>
+  {% if site.data.selected_publications contains entry.key %}
+  <span class="publication-selected-label">Selected publication. </span>
+  {% endif %}
   <div class="publication-main">
     {% if entry.link %}
     <a class="venue-badge" href="{{ entry.link }}" target="_blank" rel="noopener">
@@ -50,7 +57,7 @@
           {%- assign initials = first_initial | append: '. ' | append: middle_initial | append: '.' -%}
           {%- assign last_name = name_parts | last -%}
         {%- endif -%}
-        {%- if author_trimmed contains 'Jinhan Kim' -%}<strong>{{ initials }} {{ last_name }}</strong>{%- else -%}{{ initials }} {{ last_name }}{%- endif -%}
+        {%- if author_trimmed contains 'Jinhan Kim' -%}<strong class="publication-self{% if site.data.selected_publications contains entry.key %} selected-author-marker{% endif %}">{{ initials }} {{ last_name }}</strong>{%- else -%}{{ initials }} {{ last_name }}{%- endif -%}
       {%- endfor -%}
     </p>
 

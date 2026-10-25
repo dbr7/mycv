@@ -69,6 +69,15 @@
   --glass-selection: rgba(255, 255, 255, 0.72);
   --author-highlight-start: rgba(241, 90, 36, 0.26);
   --author-highlight-end: rgba(241, 90, 36, 0.12);
+  --selected-venue-ink: #fff5eb;
+  --selected-venue-base: #944535;
+  --selected-venue-glint: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 64%);
+  --selected-venue-fill: linear-gradient(112deg, #85412e 0%, #974134 48%, #743e5a 100%);
+  --selected-venue-rim: linear-gradient(135deg, #d6986e, #b86f61 44%, #a37eab);
+  --selected-author-ink: #9d532e;
+  --selected-author-marker-start: #deaa8c;
+  --selected-author-marker-end: #c89eb7;
+  --selected-author-marker-opacity: 0.2;
   --glass-shadow: 0 24px 70px rgba(43, 49, 57, 0.14),
     0 2px 9px rgba(43, 49, 57, 0.07);
   --surface-shadow: 0 30px 90px rgba(43, 49, 57, 0.1);
@@ -101,6 +110,10 @@ html[data-theme="dark"] {
   --glass-selection: rgba(255, 255, 255, 0.11);
   --author-highlight-start: rgba(255, 122, 61, 0.32);
   --author-highlight-end: rgba(255, 122, 61, 0.18);
+  --selected-author-ink: #fff1dc;
+  --selected-author-marker-start: #95533b;
+  --selected-author-marker-end: #754460;
+  --selected-author-marker-opacity: 0.6;
   --glass-shadow: 0 28px 80px rgba(0, 0, 0, 0.44),
     0 2px 10px rgba(0, 0, 0, 0.28);
   --surface-shadow: 0 34px 100px rgba(0, 0, 0, 0.28);
@@ -1327,6 +1340,47 @@ html[data-theme="dark"] .venue-badge {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.13);
 }
 
+/* Selected publications: the approved Sunset Lacquer treatment. */
+:is(.publications-section, .selected-section) [data-selected-paper] .venue-badge,
+.selected-venue-sample {
+  border: 1px solid transparent;
+  background:
+    var(--selected-venue-glint) padding-box,
+    var(--selected-venue-fill) padding-box,
+    var(--selected-venue-rim) border-box;
+  background-color: var(--selected-venue-base);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: var(--selected-venue-ink);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.publication-selected-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.selected-publications-legend {
+  display: flex;
+  margin: 18px 0 0;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-muted);
+  font-size: 11px;
+}
+
+.selected-venue-sample {
+  display: inline-block;
+  width: 16px;
+  height: 9px;
+  border-radius: 999px;
+}
+
 .publication-name {
   margin: 0 0 4px;
   font-size: 1.02rem;
@@ -1397,6 +1451,41 @@ html[data-theme="dark"] .venue-badge {
   white-space: nowrap;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+/* Selected names: Amber Copper ink with the approved soft curve marker. */
+strong.selected-author-marker {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  display: inline;
+  margin: 0 1px;
+  padding: 0 0.24em;
+  border: 0;
+  border-radius: 3px;
+  background: none;
+  box-shadow: none;
+  color: var(--selected-author-ink);
+  font-weight: 700;
+  line-height: inherit;
+  white-space: nowrap;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+strong.selected-author-marker::before {
+  position: absolute;
+  z-index: -1;
+  right: -1px;
+  bottom: 0;
+  left: -1px;
+  height: 0.8em;
+  border-radius: 45% 20% 45% 20% / 25% 35% 20% 40%;
+  background: linear-gradient(112deg, var(--selected-author-marker-start), var(--selected-author-marker-end));
+  opacity: var(--selected-author-marker-opacity);
+  transform: rotate(-2deg);
+  content: "";
+  pointer-events: none;
 }
 
 .publication-venue {
