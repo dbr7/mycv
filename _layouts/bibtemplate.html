@@ -11,10 +11,10 @@
   <div class="publication-main">
     {% if entry.link %}
     <a class="venue-badge" href="{{ entry.link }}" target="_blank" rel="noopener">
-      {{ entry.series }} · {{ entry.year }}
+      {{ entry.series }} {{ entry.year }}
     </a>
     {% else %}
-    <p class="venue-badge">{{ entry.series }} · {{ entry.year }}</p>
+    <p class="venue-badge">{{ entry.series }} {{ entry.year }}</p>
     {% endif %}
     <h4 class="publication-name">
       {% if links.pdf %}

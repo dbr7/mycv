@@ -1,71 +1,135 @@
 # The service page shows every item in each group.
 # Keep new service items in reverse chronological order.
+# Use one venue/track or reviewing appointment per item; years are grouped automatically.
+# Put roles in service-role spans; separate them with spacing, not punctuation.
 groups:
   - number: "01"
     title: Organizing
     home_label: Organizing
     items:
       - year: "2027"
-        content: '<a href="https://conf.researchr.org/home/icst-2027">ICST</a> · Posters Track Co-chair'
+        content: '<a href="https://conf.researchr.org/home/icst-2027">ICST</a> <span class="service-role">Posters Track Co-chair</span>'
       - year: "2026"
-        content: '<a href="https://conf.researchr.org/home/icst-2026">ICST</a> · Testing Tools and Data Showcase Track Co-chair'
+        content: '<a href="https://conf.researchr.org/home/icst-2026">ICST</a> <span class="service-role">Testing Tools and Data Showcase Track Co-chair</span>'
       - year: "2026"
-        content: '<a href="https://conf.researchr.org/home/ssbse-2026">SSBSE</a> · Publicity Co-chair'
+        content: '<a href="https://conf.researchr.org/home/ssbse-2026">SSBSE</a> <span class="service-role">Publicity Co-chair</span>'
       - year: "2026"
-        content: '<a href="https://search-based-and-fuzz-testing.github.io/sbft26/">SBFT</a> &amp; <a href="https://conf.researchr.org/home/icse-2026/deeptest-2026">DeepTest</a> · Workshop Co-organizer'
+        content: '<a href="https://search-based-and-fuzz-testing.github.io/sbft26/">SBFT</a> <span class="service-role">Workshop Co-organizer</span>'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/icse-2026/deeptest-2026">DeepTest</a> <span class="service-role">Workshop Co-organizer</span>'
       - year: "2025"
-        content: '<a href="https://conf.researchr.org/home/icse-2025/deeptest-2025">DeepTest</a> · Workshop Co-organizer'
+        content: '<a href="https://conf.researchr.org/home/icse-2025/deeptest-2025">DeepTest</a> <span class="service-role">Workshop Co-organizer</span>'
 
   - number: "02"
     title: Program committees
     home_label: Program committee
     items:
       - year: "2027"
-        content: '<a href="https://conf.researchr.org/home/icse-2027">ICSE</a> · Research Track'
+        content: '<a href="https://conf.researchr.org/home/icse-2027">ICSE</a> <span class="service-role">Research Track</span>'
       - year: "2026"
-        content: '<a href="https://conf.researchr.org/home/ase-2026">ASE</a> · Research Track'
+        content: '<a href="https://conf.researchr.org/home/ase-2026">ASE</a> <span class="service-role">Research Track</span>'
       - year: "2026"
-        content: '<a href="https://conf.researchr.org/track/eseiw-2026/eseiw-2026-esem---technical-track">ESEM</a> · Research Track'
+        content: '<a href="https://conf.researchr.org/track/eseiw-2026/eseiw-2026-esem---technical-track">ESEM</a> <span class="service-role">Research Track</span>'
       - year: "2026"
-        content: '<a href="https://conf.researchr.org/home/icst-2026">ICST</a> · Education Track'
+        content: '<a href="https://conf.researchr.org/home/icst-2026">ICST</a> <span class="service-role">Education Track</span>'
       - year: "2026"
-        content: '<a href="https://conf.researchr.org/home/icst-2026/mutation-2026">Mutation</a> · <a href="https://conf.researchr.org/home/ase-2026/rase-2026">RASE</a>'
+        content: '<a href="https://conf.researchr.org/home/icst-2026/mutation-2026">Mutation</a>'
+      - year: "2026"
+        content: '<a href="https://conf.researchr.org/home/ase-2026/rase-2026">RASE</a>'
       - year: "2025"
-        content: '<a href="https://conf.researchr.org/home/issta-2025">ISSTA</a> · Research Track'
+        content: '<a href="https://conf.researchr.org/home/issta-2025">ISSTA</a> <span class="service-role">Research Track</span>'
       - year: "2025"
-        content: '<a href="https://conf.researchr.org/home/ase-2025">ASE</a> · NIER &amp; Student Research Competition'
+        content: '<a href="https://conf.researchr.org/home/ase-2025">ASE</a> <span class="service-role">NIER Track</span>'
       - year: "2025"
-        content: '<a href="https://conf.researchr.org/home/ssbse-2025">SSBSE</a>, <a href="https://sbft25.github.io/">SBFT</a>, <a href="https://conf.researchr.org/home/icst-2025/mutation-2025">Mutation</a> &amp; <a href="https://demessai.github.io/">DeMeSSAI</a>'
+        content: '<a href="https://conf.researchr.org/home/ase-2025">ASE</a> <span class="service-role">Student Research Competition</span>'
+      - year: "2025"
+        content: '<a href="https://conf.researchr.org/home/ssbse-2025">SSBSE</a>'
+      - year: "2025"
+        content: '<a href="https://sbft25.github.io/">SBFT</a>'
+      - year: "2025"
+        content: '<a href="https://conf.researchr.org/home/icst-2025/mutation-2025">Mutation</a>'
+      - year: "2025"
+        content: '<a href="https://demessai.github.io/">DeMeSSAI</a>'
       - year: "2024"
-        content: 'SCAM (Research), ICSE (Demonstrations), ASE (Demonstrations &amp; NIER), DeepTest, Mutation'
+        content: '<a href="https://conf.researchr.org/track/scam-2024/SCAM-2024-research-track">SCAM</a> <span class="service-role">Research Track</span>'
+      - year: "2024"
+        content: '<a href="https://conf.researchr.org/track/icse-2024/icse-2024-demonstrations">ICSE</a> <span class="service-role">Demonstrations Track</span>'
+      - year: "2024"
+        content: '<a href="https://conf.researchr.org/track/ase-2024/ase-2024-tool-demonstrations">ASE</a> <span class="service-role">Demonstrations Track</span>'
+      - year: "2024"
+        content: '<a href="https://conf.researchr.org/track/ase-2024/ase-2024-nier-track">ASE</a> <span class="service-role">NIER Track</span>'
+      - year: "2024"
+        content: '<a href="https://conf.researchr.org/home/icse-2024/deeptest-2024">DeepTest</a>'
+      - year: "2024"
+        content: '<a href="https://conf.researchr.org/home/icst-2024/mutation-2024">Mutation</a>'
       - year: "2023"
-        content: 'Mutation, ASE (NIER), ICSME (Artifact Evaluation)'
+        content: '<a href="https://conf.researchr.org/home/icst-2023/mutation-2023">Mutation</a>'
+      - year: "2023"
+        content: '<a href="https://conf.researchr.org/track/ase-2023/ase-2023-nier-track">ASE</a> <span class="service-role">NIER Track</span>'
+      - year: "2023"
+        content: '<a href="https://conf.researchr.org/track/icsme-2023/icsme-2023-artifact-evaluation-track-and-rose-festival">ICSME</a> <span class="service-role">Artifact Evaluation Track</span>'
       - year: "2022"
-        content: 'Mutation, ICST (Poster), ICSME (Registered Reports &amp; Artifact Evaluation)'
+        content: '<a href="https://icst2022.vrain.upv.es/home/mutation-2022">Mutation</a>'
+      - year: "2022"
+        content: '<a href="https://icst2022.vrain.upv.es/track/icst-2022-posters">ICST</a> <span class="service-role">Posters Track</span>'
+      - year: "2022"
+        content: '<a href="https://cyprusconferences.org/icsme2022/registered-reports-track/">ICSME</a> <span class="service-role">Registered Reports Track</span>'
+      - year: "2022"
+        content: '<a href="https://cyprusconferences.org/icsme2022/call-for-joint-artifact-evaluation-track-and-rose-festival-track/">ICSME</a> <span class="service-role">Artifact Evaluation Track</span>'
       - year: "2021"
-        content: 'Mutation, ICSME (Artifact Evaluation)'
+        content: '<a href="https://mutation-workshop.github.io/2021/">Mutation</a>'
+      - year: "2021"
+        content: '<a href="https://icsme2021.github.io/cfp/AEandROSETrack.html">ICSME</a> <span class="service-role">Artifact Evaluation Track</span>'
       - year: "2020"
-        content: 'Mutation'
+        content: '<a href="https://mutation-workshop.github.io/2020/">Mutation</a>'
 
   - number: "03"
     title: Reviewing
     home_label: Reviewing
     items:
       - year: "2026"
-        content: 'Reviewer · EMSE'
+        content: '<a href="https://link.springer.com/journal/10664">EMSE</a> <span class="service-role">Reviewer</span>'
       - year: "2025"
-        content: '<a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM Board of Distinguished Reviewers</a>'
+        content: '<a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM</a> <span class="service-role">Board of Distinguished Reviewers</span>'
       - year: "2025"
-        content: 'Reviewer · TSE, TOSEM, EMSE, STVR &amp; IEEE Computer'
+        content: '<a href="https://www.computer.org/csdl/journal/ts">TSE</a> <span class="service-role">Reviewer</span>'
+      - year: "2025"
+        content: '<a href="https://dl.acm.org/journal/tosem">TOSEM</a> <span class="service-role">Reviewer</span>'
+      - year: "2025"
+        content: '<a href="https://link.springer.com/journal/10664">EMSE</a> <span class="service-role">Reviewer</span>'
+      - year: "2025"
+        content: '<a href="https://onlinelibrary.wiley.com/journal/10991689">STVR</a> <span class="service-role">Reviewer</span>'
+      - year: "2025"
+        content: '<a href="https://www.computer.org/csdl/magazine/co">IEEE Computer</a> <span class="service-role">Reviewer</span>'
       - year: "2024"
-        content: '<a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM Board of Distinguished Reviewers</a>'
+        content: '<a href="https://dl.acm.org/journal/tosem/distinguished-reviewers-board">TOSEM</a> <span class="service-role">Board of Distinguished Reviewers</span>'
       - year: "2024"
-        content: 'Reviewer · TSE, TOSEM, EMSE, JSEP &amp; JSS'
+        content: '<a href="https://www.computer.org/csdl/journal/ts">TSE</a> <span class="service-role">Reviewer</span>'
+      - year: "2024"
+        content: '<a href="https://dl.acm.org/journal/tosem">TOSEM</a> <span class="service-role">Reviewer</span>'
+      - year: "2024"
+        content: '<a href="https://link.springer.com/journal/10664">EMSE</a> <span class="service-role">Reviewer</span>'
+      - year: "2024"
+        content: '<a href="https://onlinelibrary.wiley.com/journal/20477481">JSEP</a> <span class="service-role">Reviewer</span>'
+      - year: "2024"
+        content: '<a href="https://www.sciencedirect.com/journal/journal-of-systems-and-software">JSS</a> <span class="service-role">Reviewer</span>'
       - year: "2023"
-        content: 'Reviewer · TSE, TOSEM, EMSE &amp; JSEP'
+        content: '<a href="https://www.computer.org/csdl/journal/ts">TSE</a> <span class="service-role">Reviewer</span>'
+      - year: "2023"
+        content: '<a href="https://dl.acm.org/journal/tosem">TOSEM</a> <span class="service-role">Reviewer</span>'
+      - year: "2023"
+        content: '<a href="https://link.springer.com/journal/10664">EMSE</a> <span class="service-role">Reviewer</span>'
+      - year: "2023"
+        content: '<a href="https://onlinelibrary.wiley.com/journal/20477481">JSEP</a> <span class="service-role">Reviewer</span>'
       - year: "2022"
-        content: 'Reviewer · TOSEM, JSEP'
+        content: '<a href="https://dl.acm.org/journal/tosem">TOSEM</a> <span class="service-role">Reviewer</span>'
+      - year: "2022"
+        content: '<a href="https://onlinelibrary.wiley.com/journal/20477481">JSEP</a> <span class="service-role">Reviewer</span>'
       - year: "2021"
-        content: 'Reviewer · TOSEM, STVR'
+        content: '<a href="https://dl.acm.org/journal/tosem">TOSEM</a> <span class="service-role">Reviewer</span>'
+      - year: "2021"
+        content: '<a href="https://onlinelibrary.wiley.com/journal/10991689">STVR</a> <span class="service-role">Reviewer</span>'
       - year: "2020"
-        content: 'Reviewer · IST, JSS'
+        content: '<a href="https://www.sciencedirect.com/journal/information-and-software-technology">IST</a> <span class="service-role">Reviewer</span>'
+      - year: "2020"
+        content: '<a href="https://www.sciencedirect.com/journal/journal-of-systems-and-software">JSS</a> <span class="service-role">Reviewer</span>'

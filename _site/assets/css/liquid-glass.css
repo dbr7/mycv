@@ -74,7 +74,7 @@
   --selected-venue-glint: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 64%);
   --selected-venue-fill: linear-gradient(112deg, #85412e 0%, #974134 48%, #743e5a 100%);
   --selected-venue-rim: linear-gradient(135deg, #d6986e, #b86f61 44%, #a37eab);
-  --selected-author-ink: #9d532e;
+  --selected-author-ink: #824226;
   --selected-author-marker-start: #deaa8c;
   --selected-author-marker-end: #c89eb7;
   --selected-author-marker-opacity: 0.2;
@@ -783,25 +783,23 @@ html[data-theme="dark"] .theme-icon-moon {
   margin: 24px 0 0;
   padding: 0;
   flex-wrap: wrap;
-  gap: 6px 0;
+  gap: 8px;
   list-style: none;
 }
 
 .research-topics li {
-  display: flex;
+  display: inline-flex;
+  min-height: 28px;
+  max-width: 100%;
+  padding: 4px 10px;
   align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--glass-selection) 55%, transparent);
   color: var(--ink-muted);
   font-size: 0.78125rem;
   font-weight: 560;
-}
-
-.research-topics li:not(:last-child)::after {
-  width: 3px;
-  height: 3px;
-  margin: 0 12px;
-  border-radius: 50%;
-  background: var(--ink-tertiary);
-  content: "";
+  line-height: 1.45;
 }
 
 .section-link {
@@ -854,6 +852,7 @@ html[data-theme="dark"] .theme-icon-moon {
   margin: 0 0 10px;
   padding: 3px 9px;
   align-items: center;
+  gap: 0.4em;
   border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--glass-edge));
   border-radius: 999px;
   background:
@@ -879,13 +878,10 @@ html[data-theme="dark"] .theme-icon-moon {
   margin: -3px -9px;
   padding: 3px 9px;
   align-items: center;
+  gap: 0.4em;
   border-radius: inherit;
   color: inherit;
   text-decoration: none;
-}
-
-.featured-meta span::after {
-  content: " ·";
 }
 
 .featured-meta:hover {
@@ -1650,6 +1646,20 @@ strong.selected-author-marker::before {
   display: grid;
   min-width: 0;
   gap: 5px;
+}
+
+.service-year-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+}
+
+.service-year-entry > a {
+  flex: none;
+}
+
+.service-role {
+  min-width: 0;
 }
 
 .service-list a {
