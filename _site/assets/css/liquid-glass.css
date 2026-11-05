@@ -1113,6 +1113,18 @@ html[data-theme="dark"] .theme-icon-moon {
   text-underline-offset: 3px;
 }
 
+.publications-scope {
+  margin: 13px 0 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 1.65;
+}
+
+.publications-scope strong {
+  font-weight: 650;
+}
+
 .publication-index {
   position: sticky;
   z-index: 12;
@@ -1337,8 +1349,7 @@ html[data-theme="dark"] .venue-badge {
 }
 
 /* Selected publications: the approved Sunset Lacquer treatment. */
-:is(.publications-section, .selected-section) [data-selected-paper] .venue-badge,
-.selected-venue-sample {
+:is(.publications-section, .selected-section) [data-selected-paper] .venue-badge {
   border: 1px solid transparent;
   background:
     var(--selected-venue-glint) padding-box,
@@ -1363,18 +1374,22 @@ html[data-theme="dark"] .venue-badge {
 
 .selected-publications-legend {
   display: flex;
-  margin: 18px 0 0;
+  margin: 11px 0 0;
   align-items: center;
-  gap: 7px;
-  color: var(--ink-muted);
-  font-size: 11px;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.5;
 }
 
 .selected-venue-sample {
-  display: inline-block;
-  width: 16px;
-  height: 9px;
-  border-radius: 999px;
+  display: block;
+  width: 18px;
+  height: 7px;
+  flex: none;
+  border-radius: 2px;
+  background: var(--selected-venue-fill);
 }
 
 .publication-name {
@@ -2067,6 +2082,10 @@ strong.selected-author-marker::before {
 
   .publications-intro {
     font-size: 0.9375rem;
+  }
+
+  .publications-scope {
+    font-size: 13.5px;
   }
 
   .publication-index {
