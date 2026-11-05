@@ -469,7 +469,7 @@
     document.body.className = `page-${view}`;
     document.title =
       view === "about"
-        ? "Jinhan Kim | Software Engineering"
+        ? "Jinhan Kim | AI and Software Engineering"
         : `${view === "service" ? "Community service" : "Publications"} | Jinhan Kim`;
     updateNavigation(immediate);
     revealPanel(view, immediate, resetScroll);
