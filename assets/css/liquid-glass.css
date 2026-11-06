@@ -1098,11 +1098,15 @@ html[data-theme="dark"] .theme-icon-moon {
   padding-top: 44px;
 }
 
+.publications-intro,
+.publications-scope {
+  font-size: 0.9375rem;
+}
+
 .publications-intro {
   max-width: 650px;
   margin: 0;
   color: var(--ink-muted);
-  font-size: 0.9375rem;
   line-height: 1.55;
 }
 
@@ -1116,7 +1120,6 @@ html[data-theme="dark"] .theme-icon-moon {
 .publications-scope {
   margin: 13px 0 0;
   color: var(--ink);
-  font-size: 14px;
   font-weight: 450;
   line-height: 1.65;
 }
@@ -2078,14 +2081,6 @@ strong.selected-author-marker::before {
 
   .news-year {
     font-size: 1rem;
-  }
-
-  .publications-intro {
-    font-size: 0.9375rem;
-  }
-
-  .publications-scope {
-    font-size: 13.5px;
   }
 
   .publication-index {
