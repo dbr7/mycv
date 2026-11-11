@@ -6,7 +6,9 @@ source "https://rubygems.org"
 # gem install bundler -v 2.4.22 --no-document
 # gem update --system 3.4.22 --no-document
 # gem 'jekyll', '3.9.5'
-gem 'github-pages', group: :jekyll_plugins
+# Pin GitHub-compatible dependencies without its hosted-build safe-mode hook.
+# This repository builds locally and publishes the prebuilt _site directory.
+gem 'github-pages', require: false
 gem 'jekyll-scholar', group: :jekyll_plugins
 gem 'kramdown-parser-gfm'
 

@@ -16,12 +16,17 @@
   It checks the actual selected-paper order and date consistency with this site.
 - Render changed CV pages and verify the final PDF before copying it to
   `assets/files/Jinhan_s_cv.pdf` and `_site/assets/files/Jinhan_s_cv.pdf`.
+- After any PDF update, rebuild the site. `_plugins/cv_version.rb` computes its
+  SHA-256 automatically for all CV buttons. Never hand-edit the version value.
+- Run `python3 scripts/check_cv_links.py` after building. It verifies the built
+  PDF and all profile/footer CV URLs; deployment also runs this guard.
 
 ## GitHub Pages publishing
 
 - GitHub Pages deploys the tracked `_site` directory. For source changes, build
   with `TZ=Europe/Zurich bundle exec jekyll build --destination _site` and inspect
-  the resulting diff. A PDF-only update just needs both PDF copies replaced.
+  the resulting diff. PDF-only updates also require this build so CV links get
+  the new content hash.
 - Preserve unrelated experiments, previews, and temporary files; do not stage
   them with a release. Stage only the requested changes and relevant build files.
 - Commit and push only when requested.

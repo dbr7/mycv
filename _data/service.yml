@@ -26,6 +26,8 @@ groups:
     items:
       - year: "2027"
         content: '<a href="https://conf.researchr.org/home/icse-2027">ICSE</a> <span class="service-role">Research Track</span>'
+      - year: "2027"
+        content: '<a href="https://conf.researchr.org/home/icst-2027/asta-2027">ASTA</a>'
       - year: "2026"
         content: '<a href="https://conf.researchr.org/home/ase-2026">ASE</a> <span class="service-role">Research Track</span>'
       - year: "2026"

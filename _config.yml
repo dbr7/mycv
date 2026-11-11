@@ -3,6 +3,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "Jinhan Kim | AI and Software Engineering" # the name of your site, e.g. ACME Corp.
 
 exclude:
+  - AGENTS.md
+  - scripts
   - .sass-cache
   - .jekyll-cache
   - gemfiles
