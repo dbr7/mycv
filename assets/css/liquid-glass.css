@@ -680,7 +680,7 @@ html[data-theme="dark"] .theme-icon-moon {
 .content-section + .content-section {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid var(--line-strong);
+  border-top: 2px solid var(--section-rule);
 }
 
 .content-section-header {
@@ -1690,11 +1690,11 @@ strong.selected-author-marker::before {
 .site-footer {
   display: grid;
   max-width: 760px;
-  margin-top: clamp(82px, 10vw, 116px);
+  margin-top: clamp(28px, 3vw, 42px);
   padding-top: 26px;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 7px 22px;
-  border-top: 1px solid var(--line-strong);
+  border-top: 2px solid var(--section-rule);
   color: var(--ink-tertiary);
   font-size: 0.75rem;
 }
